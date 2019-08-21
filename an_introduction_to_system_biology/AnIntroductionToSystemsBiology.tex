@@ -1,0 +1,685 @@
+\documentclass[11pt,a4paper]{report}
+\usepackage{graphicx}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{titling}
+\usepackage{gensymb}
+\usepackage{pdfpages}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{multirow}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[nopar]{lipsum}
+\setlength\parindent{1cm}
+\usepackage{hyperref}
+\setlength{\hoffset}{-1.8cm} 
+\setlength{\voffset}{-2cm}
+\setlength{\textheight}{24.0cm} 
+\setlength{\textwidth}{17cm}
+\usepackage{titlesec}
+
+\setcounter{secnumdepth}{4}
+
+
+
+
+\begin{document}
+\begin{huge}
+\title{\Huge{An Introduction To Systems Biology\\Design Principles of Biological Circuits\\Uri Alon}}
+\author{Lukáš Kuhajda}
+\date{2019/2020}
+\maketitle
+\end{huge}
+
+\newpage
+
+\chapter{Transkripční síť}
+- tranksripce (přepis) - výroba RNA dle informace z DNA\\
+- transkripční síť - interakce mezi transkripčními faktory a geny\\
+- buňka - tisíce proteinů - každý svůj úkol - vysoká přesnost\\
+\indent - sledování prostředí, produkce co je třeba v potřebném množství - prováděno \textbf{transkripční sítí}\\
+
+\section{Kognitivní problémy buňky}
+- kognitivní - poznávací, vjemový\\
+- rozeznávání tepla, tlaku, signály z jiných buněk, prospěšné živiny, škodlivé látky..., vnitřního stavu (poškození DNA, proteinů, membrány)\\
+- \textbf{transkripční faktory} - reprezentace stavu prostředí\\
+\indent - pro rychlý přechod mezi aktivními a psivními molekulovými stavy\\
+\indent - aktivní trans.fak. se může vázat na DNA a regulovat rychlost čtení cílových genů\\
+\indent - čtení genů do mRNA $\rightarrow$ přeložení do proteinu (\textbf{produkt genu}) $\rightarrow$ působení na prostředí\\
+
+\section{Prvky transkripční sítě}
+- gen - úsek DNA - sekvence kóduje informaci pro produkci proteinu\\
+\indent - transkripce genu - \textbf{RNA polymeráza} tvoří mRNA odpovídající kódovací sekvenci genu\\  
+\indent - \textbf{promotor} - kontrola rychlosti přepsání genu, množství mRNA za jednotku času\\
+\indent \indent - regulační oblast DNA předcházející genům\\
+\indent \indent - vazba RNAp s daným místem v promotoru - kvalita místa úměrná s transk. mírou\\
+\indent - RNAp - jednání se všemi geny, změny ale prováděny z jednotlivých genech transkr. faktory\\
+\indent \indent - vazbou transkr.fak. s místem v promotoru cílového genu dochází k ovlivnění trans.míry \\
+\indent \indent \indent - ovlivnění kdy RNAp zahájí transkripci genu\\
+\indent - transkripční faktor \\
+\indent \indent - \textbf{aktivátor} - zvyšuje míru transkripce genu\\
+\indent \indent - \textbf{represor} - nepřepisování genu v RNA, redukce míry transkripce\\
+\indent - \textbf{transkripční síť} - proteiny transk.fak. kódovány geny, které jsou regulovány jinými trans.fak.\\
+\indent \indent - popisuje všechny regulační transkripční interakce v buňce\\
+\indent \indent - \textbf{nody} - uzly v grafu, geny\\
+\indent \indent - \textbf{hrany} - transkripční regulace genu produktem proteinu jiného genu\\
+\indent \indent - \textbf{signály} - vstup do sítě\\
+\indent \indent \indent - molekuly, modifikace proteinu - přímé ovlivnění aktivitu transkr.fak.\\
+\indent \indent \indent - často způsobení fyzické změny tvaru proteinu transkr.fak.\\
+\indent \indent \indent \indent - převzetí aktivního molekulového stavu\\
+\indent - signál $\rightarrow$ změna aktivity transk.fak. $\rightarrow$ změna produkce proteinů\\
+\indent - některé proteiny jsou transk.fak., které aktivují další geny\\
+\indent - zbytek vykonává různé funkce v buňce - budování struktury, katalyzace \\
+
+\subsection{Oddělění časových intervalů}
+- vázání transkr.fak. k dané části DNA v rámci sekund\\
+- transkripce a translace cílového genu v rámci minut\\
+- hromadění proteinového produktu v rámci minut až hodin\\
+- úroveň aktivity trans.fak. považována za stabilní v rámci rovnic popisujících dynamiku pro pomalý časový rozvrh změn úrovně proteinů\\
+- velká škála mechanismů, jak transkr.fak. regulují geny\\
+- při spojení transkr.fak. s DNA se doplní o RNAp pro kontrolu produkce mRNA\\
+- transkripční síť - modularita komponentů\\
+\indent - možnost vzít DNA z genu z jednoho do druhého organismu\\
+\indent \indent - síť tvárná - evoluce, snadné začlenění nových genů a regulací\\
+- GFP - green fluorescent protein - světélkování u medúz\\
+- hrany v síti se jeví, že se vyvíjí v rychlejších intervalech než kódování částí genů\\
+\indent - myši, lidi - podobné geny, rozdíl transkripční regulaci genů\\
+\indent \indent - rozdíl v druzích ne tolik v genech, ale v hranách transrk.sítě\\
+
+\subsection{Označení hran: aktivátory a represory}
+- aktivátor - pozitivní kontrola, vzrůst míry transkripce, node obsahuje více + hran\\
+- represor - negativní kontrola, redukce míry transkripce, node obsahuje více - hran\\
+- síť většinou obsahuje více pozitivních hran - 60-80$\%$\\
+- většina aktivátorů funguje za určitých podmínek jako represory pro dané cílové geny\\
+\indent - platí i naopak\\
+- duální transkr.fak - při splnění podmínky působí na gen jako aktivátor, při jiné jako pasivátor\\
+- transkr.fak. mají tendenci použít stejný mód regulace pro většinu jejich cílových genů\\
+\indent - označení hran jdoucích do nodu (transkrypční interakce regulující gen) nejsou tak korelované\\
+- označení hran odcházejících bývaá spíše korelované, než označení hran příchozích\\
+
+\subsection{Čísla na hranách: vstupní funkce}
+- označení síly interakce\\
+- \textbf{vstupní funkce} - síla účinku transk.fak. na míru transkripce cílového genu\\
+- $X\rightarrow Y$ ... $rate$ $of$ $production$ $Y=f(X^*)$ - míra produkce proteinu $Y$ za jednotku času\\
+\indent - $X^*$ - aktivní forma koncetrace $X$
+\indent - $f(X^*)$ obvykle monotóní, tvar $S$ - rostoucí když $X$ aktivátor a naopak\\
+- Hillova funkce - popisuje mnoho vsupních funkcí genů\\
+\indent - pro aktivátor\\
+\begin{equation}
+	f(X^*)=\frac{\beta X^{*n}}{K^n+N^{*n}}
+\end{equation}
+\indent \indent K ... aktivační koeficient - udává se v koncentraci $X$ nutnou pro aktivaci výrazu\\
+\indent \indent \indent - souvisí se slučivostí mezi $X$ a jeho umístěním na promotoru, + další faktory\\
+\indent \indent $\beta$ - maximální hodnota výrazu, $X^*>>K$\\
+\indent \indent \indent - při vysoké koncentraci se $X^*$ váže na promotors vysokou ppstí a stimuluje RNAp\\
+\indent \indent \indent k produkci velkého množství mRNA za jednotku času\\
+\indent \indent n - \textbf{Hillův koeficient} - řídí šikmost vstupní funkce\\
+\indent \indent \indent - obvykle 1-4, čím vyšší tím šikmější\\
+\indent - pro represor
+\begin{equation}
+	f(X^*)=\frac{\beta}{1+(\frac{X^*}{K})^n}
+\end{equation}
+- každá hrana tedy může nést 3 čísla, změny při evoluci\\
+- spousta genů má nenulový počáteční stav hodnoty výrazu - \textbf{základní hodnota výrazu} - $\beta_0$\\
+
+\subsection{Logické vstupní funkce: jednoduchý framwork k pochopení dynamiky sítě}
+- Hill dobrý pro detailní modely, z matematického hlediska lepší jednodušší funkce pro zachycení základního chování\\
+- \textbf{logická aproximace} - častá aproximace vstupní funkce v transkripční síti, skoková\\
+\indent - pro jednoduché grafické řešení dynamických rovnic \\
+\indent - gen buď zapnutý (ON - $f(X^*)=\beta$)/ vypnutý (OFF - $f(X^*)=0$), aktivační práh = $K$\\
+\indent - pro aktivátor\\
+\begin{equation}
+	f(X^*)=\beta\theta(X^*>K)
+\end{equation}
+\indent \indent $\theta$ ... 0/1
+\indent - pro represor obrácené logické znaménko\\
+
+\subsection{Vícerozměrové vstupní funkce řídící geny s více vstupy}
+- sousta nodů má více než 1 vstupní hranu\\
+- aktivita promotoru je vícerozměrné vstupní funkce různých transk.fak.
+- můžou být aproximovány logickými funkcemi\\
+- geny co pro aktivaci potřebují oba aktivátory proteinu vázané na promotor\\
+\begin{equation}
+	f(X^*,Y^*)=\beta\theta(X^*>K_x)\theta(Y^*>K_y)\sim X^*AND^{.}Y^*
+\end{equation}
+- alespoň jeden\\
+\begin{equation}
+f(X^*,Y^*)=\beta\theta(X^*>K_xOR^.Y^*>K_y)\sim X^*OR^{.}Y^*
+\end{equation}
+- některé jako suma vstupů\\
+\begin{equation}
+f(X^*,Y^*)=\beta_x X^*+\beta_y Y^*
+\end{equation}
+- jednoduchá změna funkční formy vstupní funkce mutací v promotoru regulovaného genu\\
+\indent - změna z AND na OR během pár mutací promotoru v $lac$ (E.coli)\\
+
+\subsection{Prozatimní shrnutí}
+- transkripční síť popisuje transkripční regulaci genů\\
+- node reprezentuje gen, hrana z X $\rightarrow$ Y - gen X se kóduje pro trans.fak proteinu, který se váže na promotor genu Y, upravuje míru transkripce\\
+\indent - protein kódovaný genem X mění míru produkce proteinu kódovaného genem Y, Z pak zas může být transk.fak. genu Z - vytváření sítě\\
+- většina nodů značí geny, které nejsou transk.fak, ale nesou různé funkce buňky\\
+- vstupy do sítě jsou informace o prostředí, mění příslušné transkr.fak.\\
+- aktivní transkr.fak. se vážou na daná místa DNA promotoru cílového genu - regulace míry transkripce\\
+\indent - míra produkce produktu genu Y je funkce koncentrace aktvního transkr.fak. $X^*$\\
+\indent - geny regulované více transkr.fak. ají vícerozměrovou vstupní funkci - Hill, logické\\
+- hrany a vstupní funkce jsou pod tlakem výběru, nevyužívaná hrana zanikne mutacemi\\
+\indent - změna jednoho nebo pár písmen v oblasti DNA, kde se váže X v promotoru Y k zrušení hrany X $\rightarrow$ Y
+
+\section{Dynamika a časová odezva jednoduché regulace genu}
+- 1 hrana sítě, gen regulovaný 1 regulátorem bez dalších vstupů (nebo jen konstanty)\\
+- $X\rightarrow Y$ - transk.fak. X reguluje gen Y\\
+- bez vstupu X neaktivní a Y není produkováno\\
+- objevení signálu $S_x$, okamžitá přeměna $X$ do aktivní formy $X^*$ a navázání na promotor genu $Y$\\
+\indent $\rightarrow$ přepis genu $Y$, překlad mRNA $\rightarrow$ hromadění proteinu $Y$\\
+\indent - buňka produkuje protein Y v konstatní míře - $\beta$ - jednotky koncentrace za jednotku času\\
+- vyvážení produkce proteinu \\
+\indent \textbf{degradace} - specifická destrukce speciálními proteiny v buňce\\
+\indent \indent - míra degradace - $\alpha_{deg}$\\
+\indent \textbf{ředění} - redukce koncentrace v důsledku zvýšení objemu buněk během růstu\\
+\indent \indent - míra ředění - $\alpha_{dil}$\\
+\indent - míra degradace/ředění\\
+\begin{equation}
+\alpha=\alpha_{deg}+\alpha_{dil}
+\end{equation}
+- změna koncentrace Y v čase
+\begin{equation}
+dY/dt=\beta-\alpha Y
+\end{equation}
+- v ustáleném stavu, konstantní koncentrace $Y_{st}$, řešení  $dY=0$\\
+\begin{equation}
+Y_{st}=\beta/\alpha
+\end{equation}
+- odstranění signálu, konec produkce ... $\beta=0$\\
+\begin{equation}
+Y(t)=Y_{st}e^{-\alpha t}
+\end{equation}
+- \textbf{časová odezva} - měří rychlost změny Y, $T_{1/2}$\\
+\indent - čas k dosažení poloviny počáteční a koncovou úrovní v dynamické procesu\\
+\indent - z předchozí rovnice z $Y_{st}$ do $Y=0$ $\rightarrow$ $Y(t)=Y_{st}/2$\\
+\begin{equation}
+T_{1/2}=log(2)/\alpha
+\end{equation}
+- některé proteiny mají vysokou degradační míru $\alpha$,je tedy nutná vysoká produkce $\beta$\\
+\indent - cyklus produkce a destrukce - rychlá reakce, když je potřeba změny\\
+- $Y=0$, spuštění signálu, začátek hromadění $Y$, růst k $Y_{st}=\beta/\alpha$\\
+\begin{equation}
+Y(t)=Y_{st}(1-e^{-\alpha t})
+\end{equation}
+
+\subsection{Časová odezva stabilních proteinů je jedna generace buněk}
+- stabilní proteiny - $\alpha_{deg}=0$, nejsou aktivně degradovány v rostoucích buňkách\\
+\indent - produkce hlídána ředěním, $\alpha=\alpha_{dil}$\\
+- produkce proteinu, náhlý konec ($\beta=0$), růst buňky do dvojnásobku, rozdělění ve dví\\
+\indent po \textbf{jednogeneračním čase} $\tau$ - koncentrace klesá na 50\%\\
+\begin{equation}
+T_{1/2}=log(2)/\alpha_{dil}=\tau
+\end{equation}
+- tato časová odezva může být limitujícím faktorem, který představuje omezení pro tvorbu efektivních genetických obvodů\\
+
+
+\chapter{Autoregulace: síťové motivy}
+- cíle \\
+\indent - \textbf{síťový motiv} - definovat vzor stavebních bloků v síti\\
+\indent - zkoumat nejjednodušší motiv v transkipční síti - \textbf{negativní autoregulace}\\
+\indent - ukázat, že tento motiv má užitečnou funkci - urychlení odezvy transk.interakce a stabilizace\\
+
+\section{Vzory, náhodně vytvořené sítě, síťové motivy}
+- E.coli - mnoho vzorů nodů a hran, hledání důležitých vzorů - statistika\\
+\indent - porovnávání se souborem \textbf{náhodných sítí} \\
+\indent \indent - sítě se stejným počtem nodů a hran jako reálné, náhodné spojení mezi nody a hranami\\
+- \textbf{síťové motivy} - vzory opakující se výrazně častěji než v náhodných sítích\\ 
+\indent - motivy odolávající mutacím, které náhodně upravují hrany\\
+
+\subsection{Detekce motivů srovnáváním s náhodnými sítěmi}
+- ER model - Erdos and Renyi - nejjednodušší soubor náhodých sítí\\
+- pro hodnotné srovnání je třeba náhodných sítí se základními rysy reálných sítí\\
+\indent - stejný počet hran (edge - E) a nodů (N) jako reálná, náhodně vytvořené spoje mezi nody\\
+\indent - N(N-1)/2 možných párů nodů, možné oba směry $\rightarrow$ N(N-1)\\
+\indent - hrana může do stejného nodu, ze kterého vycházela - N\\
+\indent počet možných hran:
+\begin{equation}
+N(N-1)+N=N^2
+\end{equation}
+\indent - pravděpodobnost hrany $p=E/N^2$
+
+\section{Autoregulace: motiv sítě}
+- srovnávání transripční sítě E.coli s náhodnými\\
+- \textbf{vlastní hrany} - vrací se do stejného nodu, ze kterého vyšly - 40\\
+\indent - transkr.fak. regulující transkripci vlastního genu\\
+\indent \indent - autogenní kontrola, \textbf{autoregulace}\\
+\indent - 34 jsou zde represory - potlačení vlastní transripce - \textbf{negativní autoregulace}\\
+\indent - statisticky by v náhodně vytvořené síti měla být pouze 1$\pm$1 vlastní hrana\\
+\indent - vypočtená odpovídající odchylka Z $\sim$ 32 je statisticky velmi významná\\
+\indent - vlastní hrany - autoregulace - je motiv sítě\\
+
+\subsection{Urychlení odevzy obvodu genu negativní autoregulací}
+- transrk.fak X se naváže na vlastní promotor k potlačení produkce mRNA\\
+- čím vyšší koncentrace, tím nižší míra produkce\\
+- dynamika popsána mírou produkce $f(X)$ a mírou degradace/ředění - pro aproximaci využit Hill\
+- X na začátku není, t=0\\
+\indent - rychlá produkce, dosažení vysokého ustáleného stavu, konec produkce na X=K (koef. represe)\\
+\begin{equation}
+T_{1/2}=\frac{K}{2\beta}
+\end{equation}
+\indent - čím silnější nerepresovaná aktivita $\beta$, tím rychlejší odezva\\
+\indent - negativní autoregulací rychlé nabytí počáteční produkce, autorepresí ukončení produkce\\
+\indent - evolucí jednoduché nastavení parametrů $\beta$ a K nezávisle na sobě\\
+\indent \indent - K - například mutací v místě vázání X v promotoru\\
+\indent \indent - $\beta$ - mutacemi v místě vázání RNAp v promotoru\\
+\indent - dosažení výrazně vyšší rychlosti odezvy než v případě bez negativní autoregulace\\
+- negativní autoregulace\\
+\indent - silný promotor dá rychlou produkci\\
+\indent - vhodný koeficient represe poskytuje žádoucí ustáleného stav\\
+\indent - v jednoduché regulaci dosažení značně vyššího ustáleného stavu, potom nežádoucí nadměrná\\
+\indent exprese produktu genu
+
+\subsection{Negativní autoregulace podporuje robusnost v kolísání míry produkce}
+- další výhodou negativní autoregulace zvýšení robusnosti expresní úrovně ustáleného stavu ke kolísání produkční míry $\beta$\\
+- kolísání metabolické kapacity v buňce, regulačního systému, náhodné efekty v produkci\\
+\indent $\rightarrow$ buněčná dvojčata rozdílné míry produkce $\beta$ u většiny proteinů\\
+\indent - rozdíly i po dobu celé generace\\
+\indent - represní práh K se většinou moc neliší\\
+- lineární závislost regulace na kolísání produkční míry $\beta$ - $X_{st}=\beta/\alpha$
+- u negativní autoregulace závisí hodnota ustáleného stavu pouze na represním práhu K - $X_{st}=K$\\
+\indent - K se v porovnání buňka-buňka tolik neliší $\rightarrow$ zvýšení robusnosti ustáleného stavu z hlediska\\
+\indent kolísání míry produkce\\
+ 
+\subsection{Pozitivní regulace zpomaluje odezvu a může vést ke dvojí stabilitě}
+- aktivace vlastní transkripce, 10\% transkr.fak. v E.coli, pomalá dynamika\\
+- s růstem úrovně X roste míra produkce\\
+- dosahuje polovičního zpoždění ve srovnání s jednoduchou regulací\\
+- vhodné pro procesy trvající dlouhou dobu - vývojové procesy\\
+- dvojí stabilita - míra pozitivní autoregulace je silná v porovnání míry degradace/ředění\\
+- při aktivaci genu zůstane aktivní i po zmizení vsupního signálu\\
+- využití ve vývojových transripčních sítích, kde je potřeba stanovit osud buňky\\
+
+
+\chapter{Motiv sítě dopředné smyčky}
+- mnoho vzorů, jen ty nalézané významně jsou motivy\\
+- motivy mají definovanou funkčnost zpracování informace\\
+\indent - jeich benefity vysvětlují, proč evolucí znikají v různých organismech\\
+- zde zaměření na motivy se 3 nody\\
+\indent - 13 možností, pouze jedna je motiv sítě (feed-forvard loop FFL)\\
+\indent - důležité pochopit regulace jednotlivých hran - každá může být buď aktivátor nebo represor\\
+\indent - 8 FFL typů, poze 2 se vyskytují častěji v sítích\\
+\indent - zde zabývání se dynamikou, běžné typy filtrují šum, pulsy a odezvové zrychlení\\
+
+\section{Výskyt subgrafu v náhodných sítích}
+- \textbf{subgraf} - vzor z více nodů\\
+- \textbf{dopředná smyčka} - 3 nody, nevrací se do počátečního\\
+- výskyt trojúhelníkových subgrafů je náhodných sítích velice vzácný\\
+- při výskytu v reálné síti lze považovat za motiv\\
+
+\section{Dopředná smyčka je motiv sítě}
+- v E.coli 42 dopředných smyček, žádná se zpětnou vazbou (3 nody spojeny dokola, často jako anti-motiv)\\
+\indent - FFL je silný motiv, mnohem častěji než v náhodných\\
+\indent - FFL jediný motiv ze všech 13 3-nodových možností\\
+
+\section{Struktura dopředné smyčky genetického obvodu}
+- transkr.fak. X reguluje traskr.fak. Y a oba regulují transkr.fak. Z, 2 paralelní regulační cesty, 8 typů\\ 
+\indent - \textbf{koherentní} - nepřímá cesta má stejné celkové znaménko jako přímá cesta\\
+\indent - \textbf{nekoherentní} - nepřímá cesta má celkově opačné znaménko co přímá\\
+- nejčastěji C1-FFL (coherent 1) - všechny aktivátory - +/++\\
+- 2. nejčastější je I1-FFL (incoherent 1) - +/+-\\
+- všechny ostatní se objevují výrazně méně často\\
+- integrace X a Y do promotoru Z - aktivace - AND/OR\\
+- X a Y často reagují na vnější podněty - např. molekuly vázající se na transkr.fak.
+- podnět z venku většinou zpracováván výrazně rychleji než vnitřní transkripční interakce v FFL\\
+- příchod $S_x$, aktivace $X$ $\rightarrow$ $X^*$, navázaní na dané místo DNA promotoru genu Y a Z během pár $s$,\\
+\indent také změna míru transkripce $\rightarrow$ koncentrace $Z$ se mění v intervalu od minut do hodin\\
+
+\section{Dynamika C1-FFL s logikou AND}
+- signál $S_x$, aktivace na $X^*$ (\textbf{kroková stimulace} X), navázání k promotoru $Y$, produkce proteinu $Y$
+\indent $\rightarrow$ druhý transrk.fak. v FFL\\
+- paralelně se $X^*$ váže na promotor genu $Z$ - logika AND - nestačí k aktivaci\\
+\indent - aktivace po překročení kocentrace $Y$ \textbf{aktivačního práhu} genu $Z$ - $K_{yz}$\\
+\indent \indent - aktivace vyžaduje i 2. vstupní signál $S_y$ - Y v aktivní formě $Y^*$\\
+- příchod $S_x$, čekání na akumulaci Y pro aktivaci Z - \textbf{zpoždění}\\
+
+\section{C1-FFL je prvek zpoždění citlivý na znaménka}
+- zpoždění s ON krokem $S_x$, ne při OFF kroku - zpoždění citlivé na znaménko\\
+- může být bráno jako druh asymetrického filtru\\
+\indent - signál $S_x$ s kratší dobou trvání než odezva nijak dál nepůsobí na Z - \textbf{detektor trvání} na ON\\
+\indent - okamžitá odezva na OFF pulsy\\
+- inženýrské použití - když náklady na chybu jsou nesymetrické\\
+- transkripční sítě - spíše ochranná funkce, filtrace kolísání\\
+- případ OR - odpadá zpoždění při ON, vzniká při OFF - buzení Z i když zrovna vypadnul signál\\
+\indent - zpoždění cca o hodinu\\
+
+\section{I1-FFL}
+- X aktivátorem Y i Z, Y represorem Z\\
+- $S_x$ $\rightarrow$ aktivace na $X^*$, vazba k Z, inicializace transkripce - produkce proteinu\\
+\indent - paralelně aktivace produkce Y, nahromadění nad práh, tlumení Z\\
+- I1-FFl tedy může generovat pulsy produkce Z\\
+- urychlení odezvy - nejdříve vysoká produkční míra, se zpožděním represor na snížení produkční míry\\
+\indent - udržení žádoucí úrovně ustáleného stavu\\
+- při zmizení signálu $S_x$ žádná akcelerace nebo zpoždění - okamžité ukončení produkce Z\\
+\indent - kvůli AND logice promotoru Z\\
+\indent \indent - s logikou OR funguje stejně, akorát je odezva při OFF a ne při ON\\
+\indent - po ukončení exponenciální pokles Z podle míry degradace/ředění\\
+\indent - I1-FFL je prvek zpoždění citlivý na znaménka\\
+
+\section{Proč jsou jiné FFL typy tak vzácné?}
+- některé postrádají citlivost k jednomu z jejich dvou vstupů\\
+- nepřítomnost signálu $S_y$ u I1-FFL - Z není represován, velký vliv na úroveň ustáleného stavu Z\\
+- I4-FFL - +/-+ - cca 5\% z FFL\\
+\indent - urychlovač s citlivostí na znaménko i pulsní generátor\\
+\indent - narozdíl od I1-FLL nezávisí na $S_y$, při nepřítomnosti $S_x$ je nesplněna logika AND z X do Z\\
+\indent \indent - nepřítomnost citlivosti vůči jednomu vstupu je důvod, proč se nevyskytuje moc často\\
+\indent \indent \indent - stejný důvod i pro I3-FFL\\
+\indent \indent \indent - podobný důvod i u C3-FFL a C4-FFL\\
+\indent \indent \indent - u ostatních případů a OR formy je složitější vysvětlování\\
+
+\section{Konvergentní evoluce FFLs}
+- základní V-tvar kdy X a Y regulují Z, od jedné do pár mutací se může přidat i regulace X $\rightarrow$ Y\\
+\indent - pokud nepomůže nebo ještě zhorší - rychle evolucí odstraněna
+\indent - u C1-FFL a I1-FFL je fukce jasná\\
+- \textbf{homologní geny} - geny z jednoho společného, značný stupeň podobnosti\\
+\indent - možný podobný vznik u FFLs - většinou však ne\\
+- vznik spíše nezávislý na stejných obvodech ve spoustě případech
+
+
+\chapter{Časové programy a globální struktura transkripčních sítí}
+- zde kompletace průzkumu smyslových motivů sítě - předtím autoregulace a dopředné smyčky\\
+- další 2 motivy\\
+\indent - SIM - single-input module\\
+\indent \indent - 1 regulátor kontroluje skupinu genů\\
+\indent \indent - vytváří časové programy exprese - geny jsou zapnuty postupně jeden po druhém ve\\
+\indent \indent \indent stanoveném pořadí\\
+\indent \indent - "just-when-needed" strategy - není produkce proteinu, dokud neni potřeba\\
+\indent \indent - optimální pro rychlou produkci systému, který se skládá z různých typů proteinů\\
+\indent \indent \indent - s omezeným zdrojem pro produkci těchto proteinů\\
+\indent - DORs - dense overlapping regulons - hustě se překrývající regulony\\
+\indent \indent - husté pole regulátorů kombinatoricky kontrolující výstupní geny\\
+\indent \indent - můžou nést výpočty důležité pro rozhodování \\
+- nakonec, jak motivy zapadají do sebe, aby vytvořily síť
+
+\section{Síťový motiv SIM}
+- větší motiv - více vzorů pohromadě s typickým vzorem architektury - 1. rodina motivů je SIM\\
+- hlavní transrk.fak. X kontroluje skupinu cílových genů - každý jeden vstup\\
+\indent - znaménko (aktivace/represe) pro všechny kontrolované nody stejné\\
+- X bývá často autoregulované\\
+- silný motiv oproti náhodným sítím\\
+- geny mají běžné biologické funkce - geny se účastní v nějaké metabolické cestě\\
+- geny pracují sekvenčně pro nashromáždění žádoucí molekuly atom po atomu\\
+- jiné  kontrolují geny reagující na stresové podněty - poškození DNA, teplotní šok...\\
+\indent - produkce proteinů opravujících škody\\
+\indent - podskupiny genů specializovaných na dané aspekty\\
+
+\section{SIM umí generovat časové programy exprese}
+- aktivace genů v daném pořadí\\
+- různé práhy X pro každý cílový gen\\
+\indent - práh pro každý promotor závisí na místě jeho vázání s X v jeho promotoru\\
+- postupná aktivacce genů, při úbytku zas postupná deaktivace z druhé strany - LIFO\\
+- v E.Coli systém argininu, SOS DNA poničení - zpoždění v pořadí o 0.1 generaci genu (5-10 min)\\
+- ekonomický design - produkce až ve chvíli potřeby\\
+- přesné \textbf{časový řád} může být pozměněn mutacemi\\ 
+\indent - při opravách rychlá produkce opravných prostředků, po ukončení různě rychlý pokles\\
+\indent \indent - geny řešící nejmenší problémy se vypnou první, ty pro rozsáhlejší se vypínají později\\
+\indent - řeší celou řadu globálních buněčných odezev - geny časované podle buněčného cyklu v bakterii\\
+\indent - geny často regulované hlavním regulátorem + přídavnými regulátory pro subsystémy\\
+\indent \indent - nemusí být tedy SIM\\
+\indent - více regulátorů, jeden má konstatní aktivitu během sledovaného intervalu\\
+- vznik SIM evoluční konvergencí ke stejnému regulačnímu vzoru u různých organismů - jako u FFL\\
+- udžuje se vůči mutacím, protože je dostatečně užitečný\\
+- někdy proces aktivace-deaktivace jako FIFO\\
+\indent - některé části procesu potřebné dříve jiné později, ale jen jednou\\
+
+\section{Topologická generalizace síťových motivů}
+- zatím jednoduché - už 4 nody 199 možných vzorů, přes 9000 pro 5\\
+- \textbf{topologická generalizace motivů} - rozdělení motivů do rodin dle jejich funkcionality\\
+\indent - když je FFL motiv, každý z těch 3 vzorů může být motiv - pouze 1 je ale opravdu motiv\\
+\indent \indent - \textbf{multi-output FFL} - může generovat časový FIFO program\\
+
+\section{multi-output FFL umí generovat časové FIFO pořadí}
+- genetický systém kontrolující produkci flagel (bičík) - mototry E.coli\\
+- když je buňce fajn, nikam se nepřemisťuje, když špatně nechá si narůst motůrky, vygeneruje navigační systém\\
+- bičík cca 50nm, z 30 typů proteinů, 10x delší než tělo, 30 mikronů/s\\
+\indent - skládá se dohromady po fázích - lego\\
+\indent \indent - uvnitř kanálek, kterým se další proteiny dostávají dál\\
+\indent - informace o proteinech kódovaná v 6 operonech\\
+\indent \indent - skupina genů transkribována stejným kusem mRNA\\
+\indent \indent - operony regulovány 2 transkr.fak. - aktivátory\\
+\indent \indent \indent - hlavní aktivátor X aktivuje Y, oba aktivují každý ze 6 operonů\\
+\indent \indent \indent \indent - \textbf{multi-output FFL}\\
+\indent \indent \indent - každý operon může být aktivován pouze pomocí X nebo Y - podobné OR branám\\
+\indent \indent \indent - just-when-needed produkce\\
+\indent \indent \indent - + oproti SIM - FIFO - X najede, postupně překročí hranice aktivace promotorů\\
+\indent \indent \indent \indent - klesáním zpět by bylo opět LIFO - X klesne, ale je furt Y\\
+\indent \indent \indent \indent - Y má vlastní hranice pro každý gen - jiné pořadí na OFF než na ON\\
+\indent \indent \indent - dále všechny funkce FFL - vytváření zpoždění při vypínání Z \\
+\indent \indent \indent \indent - deaktivace po určitém čase - detektor zpoždění pro každý výstup\\
+\indent \indent \indent - při krátké ztrátě X se díky OR nemusí přerušit vstup\\
+\indent \indent \indent - multi-output je generalizace FFL, která se vyskytuje nejčastěji v transkr. sítích\\
+
+\section{Integrace signálu a kombinatorická kontrola: bi-fan a hustě se překrývající regulony}
+- 4-nodové vzory - ze 199 možností jsou známé 2 motivy - two-output FFL a \textbf{bi-fan}\\
+\indent bi-fan - $X_1$ a $X_2$ oba regulují $Z_1$ $Z_2$\\
+\indent \indent - patří do skupiny \textbf{hustě se překrývajících regulonů - DORs}\\
+- DOR - řada transkr.fak. regulující sadu výstupních genů v hustě se překrývající směru\\
+\indent - většinou ne všechny vstupy regulují všechny výstupy\\
+\indent - kombinatorický rozhodovací systém\\
+\indent - E.coli a kvasnice pár DORs - regulace někalika set genů\\
+\indent - sdílená společná globální funkce - reakce na stres, metabolismus živin...\\
+
+\section{Síťové motivy a globální struktury smyslových transkripčních sítí}
+- autoregulace, FFL, SIM, DOR - jak jsou vůči sobě, jak se překrývají?\\
+- procedura hrubého zrna - substituce motivů za tvary - zjednodušení grafického znázornění sítě\\
+- všechny geny jsou pokryty nějakým z rodiny motivů\\
+- poměrně vzácné dlouhé kaskády ve smyslových transkr.sítích - časové nároky\\
+\indent - jiné biologické sítě je často obsahují\\
+
+
+\chapter{Síťové motivy ve vývojových, transdukčních a neronových sítích}
+- vše předtím ve smyslových sítích - potřeba rychlých reakcí\\
+- byly tvořeny malými sadami těchto motivů\\
+- tady - síťové moivy v jiných typech bio sítí\\
+- \textbf{vývojová transkripční síť} - transkr. sítě řídící osudy buněk - z vajíčka do mnohobuněčného org\\
+\indent - diference buňky na jiný typ buňky\\
+\indent - od smyslových rozdíl v časových intervalech a reverzibilitě\\
+\indent \indent - pomalejší nevratná rozhodování - vznik nových motivů sítě\\
+- kromě trankr. sítí používá buňka další interakčí sítě\\
+\indent - interakční síť protein-protein, signálová transdukční síť, metabolické sítě\\
+\indent \indent - graficky různé barvy hran pro rozeznání různých sítí\\
+\indent \indent - rozdíly v časových intervalech\\
+\indent \indent \indent - transkr.sítě v hodinách, signálová transdukční síť funguje v sekundách až minutách\\
+
+\section{Síťové motivy ve vývojových transkripčních sítích}
+- \textbf{senzorová transkr.síť} - reakce na vnější změny, skoro ve všech buňkách\\
+- \textbf{vývojové transkripční sítě} - diferenciační procesy, vývoj, vajíčko $\rightarrow$ vícebuněčný organismus\\
+\indent - rozdělením diferencují do jiné tkáně/pletiva\\
+\indent \indent - aby se staly součástí nové tkáně, musí vyjádřit specifickou sadu proteinů\\
+\indent \indent \indent - sada určuje, jestli bude tkáň svalová nebo neurální\\
+\indent - zkoumání na octomilkách, červech, mořských ježcích a lidech - pár silných motivů\\
+\indent \indent - C1-FFL a I1-FFL jako u senzorových sítí, taky autoregulační motivy a SIMs\\
+\indent \indent - dále pak jiné, co u senzorových sítí nebyly\\
+
+\subsection{Dvounodová pozitivní zpětná smyška pro dělání rozhodování}
+- dva transkr.fak. regulují samy sebe - ve vývojových sítích spíše pozitivní\\
+\indent - 2 pozitivní interakce - double-positive feedback - transkr.fak. se navzájem aktivují\\
+\indent \indent - 2 ustálené stavy - X a Y oba ON / oba OFF\\
+\indent \indent - signál pro produkci X/Y může nereverzivně uzamknout oba proteiny do ON\\
+\indent \indent \indent - vzájemná aktivace\\
+\indent \indent \indent - \textbf{blokovací mechanismus}\\
+\indent \indent - neujúčinější, když geny regulované X a Y kódují proteiny patřící stejné tkáni\\
+\indent - 2 negativní interakce - double-negatice feedback - vzájemná represe\\
+\indent \indent - také 2 stabilní ustálené stavy - X ON a Y OFF / X OFF a Y ON\\
+\indent \indent \indent - vyjádření buď X nebo Y \\
+\indent \indent - vhodné, když geny regulované X patří buňkám s jiným osudem než geny regulované Y\\
+- často ještě u obou nodů pozitivní autoregulace\\
+\indent - zvyšování produkce při dosažení určité hranice\\
+\indent \indent - tím také stabilizace ON ustálený stav transkr.faktoru\\
+- bistabilní přirozenost těchto motivů dovoluje buňkám dělat nereverzivní rozhodnutí a přiřadit osudy, kdy specifická sada genů se vyjadřuje a další je utlumená\\
+
+\subsection{Regulující zpětná vazba a regulovaná zpětná vazba}
+- 2 hlavní 3-nodové motivy - obsahují zpětnou vazbu\\
+\indent - trojúhelníhový motiv, kde X a Y vzájemně regulují Z - regulující zpětná vazba
+\indent \indent - 10 možných kombinací znamének\\
+\indent \indent \indent -  double-positive - stejné znaménko z obou do Z\\
+\indent \indent \indent -  double-negative - často rozdílné znaménko do Z\\
+\indent \indent - také 2-nodová smyčka, kde jsou oba nody společně regulovány zezhora 1 transkr.fak.\\ 
+\indent \indent \indent - regulovaná zpětná vazba\\
+\indent \indent \indent - prvek paměti - Z může řídit zapnutí/vypnutí smyčky\\
+\indent \indent \indent \indent - smyčka si pamatuje, jestli bylo Z aktivní nebo ne\\
+\indent \indent \indent \indent - zapamatování si osudu buněk, i když už zmizel původní signál\\
+
+\subsection{Dlouhé transkripční kaskády a vývojové časování}
+- dlouhé transkripční kaskády vzácné v senzorových sítích, ve vývojových motivy\\
+- řetězy interakcí - X $\rightarrow$ Y $\rightarrow$ Z $\rightarrow$ ...\\
+- čas odezvy každého článku  je daný mírou degradace/ředění v $T_{1/2}$ - odezva kolem jedné generace\\
+\indent - u vývojových sítí tato odezva sedí líp - lepší řízení vývojových procesů\\
+
+\subsection{Propojená dopředná smyčka v B.subtilis sporulační sítí}
+- sporulace - proces tvorby spor - buňka sloužící k dlouhodobému přežití bakterie v nepříznivých podmínkách\\ 
+- b.subtilis - bacil senný\\
+- ve vývojových sítích FFL často jen část větších a složitějších obvodů, než u senzor.sítí\\
+- při hladovění se buňky přestanou dělit a diferencuje do odolných sporů\\
+\indent - spory obsahují mnoho proteinů, co se v bakterii při růstu nevyskytují\\
+\indent - odpočívající buňka, skoro úplně dehydrovaná - přežije dlouho, spící stav\\
+\indent - při správných podmínkách se tranformuje zpět na normální bakterii\\
+- při tvorbě sporu je třeba změnit tvorbu sady proteinů - sporulace\\
+\indent - potřeba stovek genů - spínání ON a OFF ve vlnách - každá specifický vliv na formaci sporu\\
+\indent - síť tvořena několika transkr.fak. sežazenými ve spojeném C1 a I1-FFL\\
+\indent - nakomibování FFLs pro využití jejich zpoždění a generování pulsů - časový program genetické\\
+\indent \indent exprese\\
+\indent - kaskádově sežazené FFLs generují 2 pulsy genů následované třetí pozdním\\
+
+\section{Síťové motivy v signálových transdukčních sítích}
+- \textbf{signálová transdukční síť} - mnohem rychlejší zpracovávání informací než 1 generace\\
+- interake mezi signálovými proteiny\\
+- vycítit informaci z okolí, zpracovat, regulovat aktivitu transkr.fak\\
+- vstupy obvykle detekovány \textbf{receptorovými proteiny}\\
+\indent - jeden konec mimo buňku, druhý uvnitř v cytoplasmě\\
+\indent \indent - mimobuněčný konec detekuje molekuly zvané \textbf{ligandy}\\
+\indent \indent \indent - navázáním konformační změna v receptoru, vnitří část se stane aktivní a katalyzuje\\ \indent \indent \indent \indent dané chemické modifikace do difusního messenger proteinu v buňce\\
+\indent \indent \indent \indent - poslání 1 bitu informace z receptoru do messengeru\\
+\indent \indent \indent - modifikace funguje v rámci sekund až minut\\
+
+\section{Informace zpracovávaná pomocí vícevrstvých perceptronů}
+- v signálových transdukčních sítích jsou nody signálové proteiny a hrany interakce\\
+- silné 2 4-nodové motivy - bi-fan, diamant\\
+- diamant - vícevrstvý vzor, podobný strukturám DOR v kaskádě s DOR, který dostává informaci z nadřazeného DORu\\
+\indent - vzory DOR se ale normálně nevskytují v kaskádě\\
+- \textbf{vícevrstvé perceptrony} - podobná struktura využívaná v umělé inteligenci a neuronových sítích\\
+
+\subsection{Tréninkový model pro perceptrony proteinové kinázy}
+- \textbf{kináza} - enzym, který přenáší fosfátovou skupinu z vysokoenergetické donorové molekuly (např. ATP) na určitou cílovou molekulu (substrát)\\
+- \textbf{kaskáda proteinové kinázy} - cesty zpracování informací nalezené ve většině eukaryotických organismů\\
+- aktivace kaskády, když se receptor naváže na ligand a aktivuje první kinázu X $\rightarrow$ \\
+\indent $\rightarrow$ X fosforylace kinázy Y na dvou daných místech $\rightarrow$ Y dvojně zfosforylovaná $\rightarrow$ \\ \indent $\rightarrow$ začne fosforylovat Z $\rightarrow$ po dvojné fosforylaci fosforyluje transkr.fak. $\rightarrow$ exprese genu\\
+- fosfatázy - enzymy proteinů postupně defosforylující kinázy - také obsažené v kaskádách\\
+- často využito lešenářské proteiny držící kinázy u sebe\\
+- adaptorové proteiny můžou spojit danou kaskádu k rozdílným vstupním receptorům v odlišném typu buňky\\
+\indent - kaskády tedy znovuvyužitelné moduly\\ 
+\indent - stejná kaskáda transdukuje rozdílný signál v rozdílné tkáni\\
+- kaskády většinou ve vrstvách, často 3\\
+\indent - v 1. řadě kinázy $X_1$, $X_2$... aktivují další řadu kináz $Y_1$, $Y_2$... ...\\
+\indent \indent - formování vícevrstvého perceptronu který může integrovat vstupy z více receptorů\\
+- \textbf{kinetika prvního řádu} - nejednodušší kinetika pro kinázy\\
+\indent - míra fosforylace Y z X je proporční vůči koncentraci aktivního X násobené koncentrací jeho\\
+\indent \indent substrátu - nefosforylované Y, značení $Y_0$\\
+\begin{equation}
+rate_.of_.phosphorylation=vXY_0
+\end{equation}
+\indent míra $v$ kinázy X
+- kináza Y fosforylovaná 2 rozdílnými vstupními kinázami - $X_1$ $X_2$
+\indent - fosforylovaná forma $Y_p$, nefosforylovaná forma $Y_o$\\
+\begin{equation}
+Y=Y_o+Y_p
+\end{equation}
+\begin{equation}
+dY_p/dt=v_1X_1Y_o+v_2X_2Y_o+\alpha Y_p
+\end{equation}
+- stabilní stav - $dY_p/dt=0$\\
+- řešení\\
+\begin{equation}
+Y_p/Y=f(w_1X_1+w_2X_2)
+\end{equation}
+\indent f - rostoucí saturující funkce\\
+\begin{equation}
+f(u)=\frac{u}{1+u}
+\end{equation}
+\indent w - váhy vstupů\\
+\begin{equation}
+w_1=v_1/\alpha
+\end{equation}
+- koncentrace fosforylovaného Y je rostoucí funkce vážených sum dvou aktivit kinázy\\
+- když je Y kináza, která musí být fosforylována na dvou místech aby byla aktivní, vstupní funkce je strmější\\
+\begin{equation}
+f(u)=\frac{u^2}{1+u+u^2}
+\end{equation}
+- S-shaped vstupní funkce vedou k aktivaci Y pouze pokud je suma vstpů větší než mezní hranice - tady 1\\
+- \textbf{hranice aktivace} - $w_1X_1+w_2X_2=1$\\
+\indent - přímka v ploše vymezené vstupními aktivitami
+
+\subsection{Vícevrstvé perceptronu mohou provést detailní výpočty}
+- jednovstvý perceptron $X_1$-$X_2$ rozdělí plochu přímkou do 2 částí - přidáním vstvy možnost složitějších výpočtů\\
+- 2 vstvy - $Y_1$ a $Y_2$ mají vlastní sady mezí ze 2 vstupů $X_1$, $X_2$ - rozdělení v půlce\\
+\indent - oblasti nízké a vysoké aktivity\\
+- kinázy $Y_1$ a $Y_2$ můžou fosforylovat kinázu Z - pouze pokud jsou fosforylované\\
+\begin{equation}
+Z_p/Z=f(w_{z1}Y_1+w_{z2}Y_2)
+\end{equation}
+- když jsou váhy $w$ malé, Y musí být fosforylované pro překročení hranice\\
+\indent - Z je fosforylované pouze na ploše $X_1$-$X_2$, když jsou Yny aktivní\\
+\indent - oblast dána průsečíky dvou regionů aktivity $Y_1$ a $Y_2$\\
+\indent \indent - aktivace Z v regionu vyhrazeném 2 úsečkami\\
+- když v prostřední vrstvě místo kinázy specifická fosfatáza - fosfatáza odstraní fosforylní úpravu - negativní váha\\
+\indent - složitější aktivační regiony\\
+- \textbf{diskriminace} - schopnost rozeznat jistý stimulující vzor\\
+\indent - nastavením vah možnost rozeznat od sebe velmi podobné stimulující vzory\\
+- \textbf{generalizace} - "vyplňování mezer" v částečných stimulujících vzorech\\
+\indent - vpuštěním neúplného vzoru obdov reaguje jako by byl celý, pokud je mu daná část podobná\\
+- \textbf{pozvolná degradace} - vadou na prvcích sítě nedojde k úplnému ukončení\\
+\indent - výkon se zhoršuje úměrně poškození\\
+- tyto 3 fenomény můžou charakterizovat funkcionalitu signálové transdukční sítě v buňce\\
+
+\section{Kompozitní síťové motivy: záporná zpětná vazba a oscilátorové motivy}
+- zatím proteinové signálové sítě a transkripční sítě zvlášť - v buňce ale pracují pospolu\\
+\indent - často výstup signáloé transduční cesty je transrk.fak\\
+- spojená síť se 2 barvami hran - transripční a protein-protein interakce\\
+- motivy\\
+\indent - 3 nody - trnaskr.fak. X transkripčně reguluje 2 geny Y a Z, protein.prod. pak přímo interagují\\
+\indent \indent - např. Y fosforyluje Z\\
+\indent - kompozitní zpětnovazební smyčka ze 2 proteinů, které spolu interagují různými barvami\\
+\indent \indent - X transkr.fak aktivující gen Y, produkt Y interaguje s X na proteinové úrovni\\
+\indent \indent \indent - často opačným způsobem\\
+\indent \indent \indent - Y naváže na X a potlačuje jeho aktivitu transkr.faktoru bráněním přístupu k DNA\\
+\indent \indent \indent \indent - nejčastěji se objevuje v genetickém systému bakterie-člověk\\
+\indent \indent \indent - pomalá aktivace Y, rychlé potlačování X - negativní stabilizace\\
+\indent \indent \indent \indent - stabilnější, než 2 pomalé interakce\\
+- homeostáza - stabilita okolo fixovaného stavu - v mnoha systémech žádoucí\\
+- oscilační dynamika - chování u některých systémů\\
+\indent - cyklus buňky, kdy se periodicky duplikují genomy\\
+\indent - cirkadiánské hodiny - pozoruhodně přesné biochemické obvody produkující oscilace na škále\\
+\indent \indent jednoho dne\\
+\indent ...\\
+\indent - typický charakter - časování výrazně přesnější než amplituda\\
+\indent \indent - variace amplitudy způsobená měnícím se vnitřním šumem z produkce proteinů\\
+\indent - mnoho oscilátorů bývá implementováno pomocí 2-barevného motivu kompozitní negativní\\
+\indent \indent zpětnovazební smyčky\\
+\indent \indent - transkr.fak. X má pozitivní autoregulaci\\
+\indent \indent \indent - robustní časování i přes fluktuace biochemických parametrů komponenty\\
+\indent \indent \indent - rodina relaxačních oscilátorů\\
+\indent - zpětnovazebné smyčka složená z regulátorů poskládaných dokola tvořící negativní zpětnovazební\\
+\indent \indent smyčku\\
+\indent \indent - 3 represory za sebou - represilátor\\
+\indent \indent \indent - rodina oscilátorů zpoždění - méně precizní časování\\
+
+\section{Síťové motivy v neuronové síti C.elegans}
+- Ceanorhabditis elegans - háďátko obecné - půdní červ - cca 1000 buněk\\
+\indent - nesouvisející sítě mají shodné motivy, anti-motivy a častěji se opakující různé vzory\\
+- nody - neurony\\
+- $X\rightarrow Y$ - X má synaptický spoj s Y\\
+- podobné motivy jako v biochemických interakčních sítích - i přes odlišné prostorové a časové vazby\\
+
+
+
+\end{document}

@@ -1,0 +1,46 @@
+\BOOKMARK [0][-]{chapter.1}{Transkripcn\355 s\355t}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Kognitivn\355 probl\351my bunky}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Prvky transkripcn\355 s\355te}{chapter.1}% 3
+\BOOKMARK [2][-]{subsection.1.2.1}{Oddelen\355 casov\375ch intervalu}{section.1.2}% 4
+\BOOKMARK [2][-]{subsection.1.2.2}{Oznacen\355 hran: aktiv\341tory a represory}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.3}{C\355sla na hran\341ch: vstupn\355 funkce}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.4}{Logick\351 vstupn\355 funkce: jednoduch\375 framwork k pochopen\355 dynamiky s\355te}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.5}{V\355cerozmerov\351 vstupn\355 funkce r\355d\355c\355 geny s v\355ce vstupy}{section.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.2.6}{Prozatimn\355 shrnut\355}{section.1.2}% 9
+\BOOKMARK [1][-]{section.1.3}{Dynamika a casov\341 odezva jednoduch\351 regulace genu}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.3.1}{Casov\341 odezva stabiln\355ch proteinu je jedna generace bunek}{section.1.3}% 11
+\BOOKMARK [0][-]{chapter.2}{Autoregulace: s\355tov\351 motivy}{}% 12
+\BOOKMARK [1][-]{section.2.1}{Vzory, n\341hodne vytvoren\351 s\355te, s\355tov\351 motivy}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.1.1}{Detekce motivu srovn\341v\341n\355m s n\341hodn\375mi s\355temi}{section.2.1}% 14
+\BOOKMARK [1][-]{section.2.2}{Autoregulace: motiv s\355te}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.1}{Urychlen\355 odevzy obvodu genu negativn\355 autoregulac\355}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.2}{Negativn\355 autoregulace podporuje robusnost v kol\355s\341n\355 m\355ry produkce}{section.2.2}% 17
+\BOOKMARK [2][-]{subsection.2.2.3}{Pozitivn\355 regulace zpomaluje odezvu a mu\236e v\351st ke dvoj\355 stabilite}{section.2.2}% 18
+\BOOKMARK [0][-]{chapter.3}{Motiv s\355te dopredn\351 smycky}{}% 19
+\BOOKMARK [1][-]{section.3.1}{V\375skyt subgrafu v n\341hodn\375ch s\355t\355ch}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.2}{Dopredn\341 smycka je motiv s\355te}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.3}{Struktura dopredn\351 smycky genetick\351ho obvodu}{chapter.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Dynamika C1-FFL s logikou AND}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.5}{C1-FFL je prvek zpo\236den\355 citliv\375 na znam\351nka}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.6}{I1-FFL}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.7}{Proc jsou jin\351 FFL typy tak vz\341cn\351?}{chapter.3}% 26
+\BOOKMARK [1][-]{section.3.8}{Konvergentn\355 evoluce FFLs}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{Casov\351 programy a glob\341ln\355 struktura transkripcn\355ch s\355t\355}{}% 28
+\BOOKMARK [1][-]{section.4.1}{S\355tov\375 motiv SIM}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{SIM um\355 generovat casov\351 programy exprese}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.3}{Topologick\341 generalizace s\355tov\375ch motivu}{chapter.4}% 31
+\BOOKMARK [1][-]{section.4.4}{multi-output FFL um\355 generovat casov\351 FIFO porad\355}{chapter.4}% 32
+\BOOKMARK [1][-]{section.4.5}{Integrace sign\341lu a kombinatorick\341 kontrola: bi-fan a huste se prekr\375vaj\355c\355 regulony}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.6}{S\355tov\351 motivy a glob\341ln\355 struktury smyslov\375ch transkripcn\355ch s\355t\355}{chapter.4}% 34
+\BOOKMARK [0][-]{chapter.5}{S\355tov\351 motivy ve v\375vojov\375ch, transdukcn\355ch a neronov\375ch s\355t\355ch}{}% 35
+\BOOKMARK [1][-]{section.5.1}{S\355tov\351 motivy ve v\375vojov\375ch transkripcn\355ch s\355t\355ch}{chapter.5}% 36
+\BOOKMARK [2][-]{subsection.5.1.1}{Dvounodov\341 pozitivn\355 zpetn\341 smy\235ka pro del\341n\355 rozhodov\341n\355}{section.5.1}% 37
+\BOOKMARK [2][-]{subsection.5.1.2}{Reguluj\355c\355 zpetn\341 vazba a regulovan\341 zpetn\341 vazba}{section.5.1}% 38
+\BOOKMARK [2][-]{subsection.5.1.3}{Dlouh\351 transkripcn\355 kask\341dy a v\375vojov\351 casov\341n\355}{section.5.1}% 39
+\BOOKMARK [2][-]{subsection.5.1.4}{Propojen\341 dopredn\341 smycka v B.subtilis sporulacn\355 s\355t\355}{section.5.1}% 40
+\BOOKMARK [1][-]{section.5.2}{S\355tov\351 motivy v sign\341lov\375ch transdukcn\355ch s\355t\355ch}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.3}{Informace zpracov\341van\341 pomoc\355 v\355cevrstv\375ch perceptronu}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.3.1}{Tr\351ninkov\375 model pro perceptrony proteinov\351 kin\341zy}{section.5.3}% 43
+\BOOKMARK [2][-]{subsection.5.3.2}{V\355cevrstv\351 perceptronu mohou prov\351st detailn\355 v\375pocty}{section.5.3}% 44
+\BOOKMARK [1][-]{section.5.4}{Kompozitn\355 s\355tov\351 motivy: z\341porn\341 zpetn\341 vazba a oscil\341torov\351 motivy}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.5}{S\355tov\351 motivy v neuronov\351 s\355ti C.elegans}{chapter.5}% 46
