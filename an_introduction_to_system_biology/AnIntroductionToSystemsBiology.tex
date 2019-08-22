@@ -477,7 +477,7 @@ T_{1/2}=\frac{K}{2\beta}
 \indent - jiné biologické sítě je často obsahují\\
 
 
-\chapter{Síťové motivy ve vývojových, transdukčních a neronových sítích}
+\chapter{Síťové motivy ve vývojových, transdukčních a neuronových sítích}
 - vše předtím ve smyslových sítích - potřeba rychlých reakcí\\
 - byly tvořeny malými sadami těchto motivů\\
 - tady - síťové moivy v jiných typech bio sítí\\
@@ -679,7 +679,153 @@ Z_p/Z=f(w_{z1}Y_1+w_{z2}Y_2)
 - nody - neurony\\
 - $X\rightarrow Y$ - X má synaptický spoj s Y\\
 - podobné motivy jako v biochemických interakčních sítích - i přes odlišné prostorové a časové vazby\\
+\indent - komunikace mezi buňkami v rámci milisekund\\
+\indent - v transkr.síti v rámci buňky v časoech od minut po hodiny\\
+- FFL - sprostředkovává přenos zašuměných signálů pomocí komponent šumu\\
+
+\subsection{Vícevstupové FFL v neuronových sítích}
+- v obou motivy, ale FFL jsou zde spojeny jinak než v transkr.sítích\\
+\indent - v transkr.sítích generalizací multi-output FFL nejčastější\\
+\indent - v neuronových u C.elegans multi-input\\
+- zjednosušeně model aktivity neuronů má rovnice podobné těm v transkr.sítích a signálových\\
+\indent transdukčních sítích, molekulární mechanismy jsou ale velmi odlišné\\
+- neurony komunikují přenosem elektrických signálů přes sinapse do dalších neuronů\\
+- neurony mají časově závislý transmembránový rozdíl napětí - aktivita neuronu\\
+- u c.elegans odstupňované napětí - X(t), Y(t), Z(t)\\
+- integrate-and-fire - model pro dynamiku neuronů - sečtení synaptických vstupů ze vstupního neuronu\\
+- Y má 2 synaptické vstupy ze 2 neronů $X_1$ a $X_2$, změna napětí Y aktivována skokovou funkcí přes váhovou sumu napětí dvou vstupních neuronů\\
+\begin{equation}
+dY/dt=\beta\theta(w_1X_1+w_2X_2>K_y)-\alpha Y
+\end{equation}
+\indent $\alpha$ - relaxační míra vůči úniku proudu přes membránu neuronové buňky\\
+\indent váhy w - síla synaptických spojení
+\indent - AND i OR brány\\
+- \textbf{detekce náhody} krátkých vstupních signálů - aktivace Z i když nebyly přítomné oba vstupní\\
+\indent signály, ale oba jen na krátkou chvíli a chvíli po sobě\\
+- časová odezva v desítkách milisekund\\
+
+\subsection{Vícevrstvé perceptrony v neuronové sítí C.elegans}
+- podobné jako v signálových transdukčních sítích, zde větší hojnost vzájemných spojení\\
+- zpracovávání informací, správnost závisí na přesnosti měření vah hran\\
 
 
+\chapter{Robusnost proteinových obvodů: příklad bakteriální chemotaxe}
+ - chemotaxe - pohyb organismu ve směru chemického gradientu - bílá krvinka k zánětu\\
+
+\section{Princip robustnosti}
+- výpočty v biologických obvodech závisí na biochemických parametrech - koncentrace proteinu\\
+- paramtery odlišné buňka od buňky - náhodné jevy\\
+- biologické obvody mají robustní konstrukci tak, že jejich základní funkce je téměř nezávislá na biochemických parametrech, které mají tendenci se měnit od buňky k buňce - \textbf{robustnost}\\
+\indent - musí se uvést jaká vlastnost je robustní k jakému parametru\\
+- fine-tuned - nerobustní vlastnosti\\
+\indent - značně se mění při odlišných biochemických parametrech\\
+- robustnost vůči změám parametru není nikdy absolutní\\
+- demonstrace principů robustnosti na proteinových signálových sítích - obvod kontrolující bekteriální chemotaxi\\
+
+\section{Bakteriální chemotaxe, jak bakterie myslí}
+\subsection{Chování chemotaxe}
+- pipeta s živinami k plujícím E.coli, jsou zaujaty a vytvoří obláček kolem - \textbf{atraktant}\\
+\indent - když se škodlivými, uplavou pryč - \textbf{repelent}\\
+\indent - \textbf{bakteriální chemotaxe}\\
+- některé buňky pohyb za světlem (fototaxe), magnetickým polem (magnetotaxe)\\
+- baktrie dokáží detekovat koncentrační gradienty malé jako změna molekuly na objem buňky na mikron a funkce v pozadí koncentrací přes 5 řádů\\
+\indent - i přes lomcování Brownovým pohybem - buňka chce rovně po dobu 10s - orientace náhodně v\\
+\indent \indent rozsahu $90^o$\\
+- \textbf{dočasné gradienty} - k řízení pohybu - využití biased-random-walk\\
+\indent - když buňka pluje od gradienty, zastaví se rychleji, aby našla nový směr\\
+\indent - v tekutině se pohybuje náhodnou procházkou\\
+\indent - \textbf{běh} - udržování konstantního směru - 1s\\
+\indent - \textbf{tumbles} - přemet - změna směru - 0.1s\\
+\indent - při přbližování snižování pravděpodobnosti přemetu (\textbf{frerkvence přemetu})\\
+\indent \indent pokračování stejným směrem\\
+- běhy a přemety jsou generovány různými stavy motoruů, které otáčí bičíky\\
+\indent - clockwise CW, counterclockwise CCW\\
+\indent - CCW - pluje dopředu, jedna se změní na CW, konec pohybu, přemet, náhodná orientace\\
+\indent \indent - motor na CCW - znova pohyb dopředu\\
+
+\subsection{Odezva a přesná adaptace}
+- pozorování buňky bez gradientu, běhy a přemety s průměrnou \textbf{ustálenou frekvencí přemetu}\\
+\indent - cca 1s\\
+- atraktant ve vzduchu nad tekutinou, zatím žádný prostorový gradient, snížení frekvence přemetů\\
+- buňky zjistí, že byly napáleny, zvýšní frekvence přemetů, i když je atraktant stále na místě - \textbf{adaptace}\\
+- \textbf{přesná adaptace} - frekvence přemetů zůstane stejná, když se objeví atraktant ve stejné míře jako předtím\\
+\indent - ustálená frekvence přemetů je nezávislá na úrovni atraktantu\\
+
+\section{Chemotaxinový proteinový obvod E.coli}
+- proteinový obvod vykonávající odezvu a výpočty adaptace\\
+\indent - vstup - koncentrace atraktantu\\
+\indent - výstup - pravděpodobnost sepnutí motorů na CW - určení frekvence přemetu\\
+- \textbf{receptory} - vnímání atraktorů a repelentů - 5 druhů\\
+\indent - část venku, druhá vevnitř - navázání \textbf{ligandů}\\ 
+\indent - uvnitř receptor navázaný na proteinovou kinázu (CheA) - receptor a kináza - dohromady X\\
+\indent \indent - X rychle mezi 2 stavy - aktivní $X^*$/neaktivní - mikrosekundy\\
+\indent - aktivní $X^*$ - změna na příslušný regulátor proteinu CheY, který je rozptýlenýv buňce\\
+\indent \indent - změna je přídavek fysforylační skupiny ($PO_4$)k CheY pro formování fosfo-CheY\\
+\indent \indent - značení CheY-P, \textbf{fosforylace} - poslání bitů informací mezi signálovými proteiny\\
+\indent \indent - CheY-P naváže na motor bičíku, zvýší pravděpodobnost změny z CCW na CW\\
+\indent \indent \indent - čím všší koncentrace CheY-P, tím vyšší frekvence přemetů\\
+\indent \indent - fosforylace CheY-P je odstraněna enzymem CheZ\\
+\indent \indent \indent - proti sobě působící CheZ a aktivní $X^*$ - ustálený stav CheY-P a frekvence přemetů\\
+
+\subsection{Atraktanty snižují aktivitu X}
+- navázání ligandu, změna pravděpodobnosti aktivního stavu $X^*$\\
+- \textbf{aktivita X} - koncentrace X v aktivním stavu\\
+- navázáním atraktantu pokles aktivity - redukce míry fosforylace CheY od X - tedy i poklesu CheY-P\\
+\indent - pokles pravděpodobnosti rotace motoru CW, redukce frekvence přemetu, delší plavba 1 směrem\\
+\indent - repelenty opačný efekt\\
+
+\subsection{Adaptace je díky pomalé modifikaci X, která zvyšuje jeho aktivitu}
+- obvod chemotaxe má druhou cestu věnovanou adaptaci\\
+- \textbf{metylační modifkace} - receptory mají pár biochemických tlačítek, která při stlačení zvyšují aktivitu a potlačují útlum X\\
+\indent - metylová skupina ($CH_3$) přidána na 4-5 míst receptoru\\
+- metylace receptoru je katalyzována enzymem CheR a je odstraněna enzmem CheB - metylové skupiny jimi průběžně přidávány a ubírány\\
+\indent - pouze ale pokud bakterie necítí ligand\\
+\indent - vypadá zbytečně, ale dává buňce možnost adaptace\\
+- výrazně pomalejší než hlavní reakce z X na CheY do motoru\\
+- design zpětné smyčky je takový, že je dosaženio přesné adaptace\\
+\indent - zvyšující se metylace X přesně vyvažuje redukci aktivity, která je způsobena atraktantem\\
+
+\section{Dva modely můžou vysvětlit přesnou adaptaci: robustní a fine-tuned}
+- zjednodušené modely zanedbávající mnoho detailů, cíl pochopení základní rysy systému\\
+- oba kopírují základní odezvu systému chemotaxe a zobrazují přesnou adaptaci\\
+\indent - fine-tuned - závisí na přesné vyváženosti rozdílných biochemicých parametrech\\
+\indent - robustní - pro širší rozptyl parametrů\\
+
+\subsection{Fine-tuned model}
+- zjednodušený model teoretického modelu chemotaxe\\
+- receptorový komplex X může být metylován $X_m$ v rámci akce CheR, demetylován CHeB\\
+- ignorování přesného počtu metylových skupin na receptor, skupina všech metylovaných receptorů do jedné proměnné $X_m$\\
+- jen metylovanýreceptor je aktivní, aktivita $a*0$ na metylovaný receptor\\
+- takovýto model ztrácí přesnou adaptaci, když $A_0$ (ustálený stav bez atraktantu) neni rovno $A_2$ (ustálený stav s atraktantem)\\
+\indent - zde změna v úrovni proteinu CheR o 20$\%$ - trojásobný rozdíl v ustálených aktivitách s a bez\\
+\indent \indent ligandu\\
+\indent - přesná adaptace je zde fine-tuned vlastnost\\
+
+\subsection{Barkai-Leiblerův robustní mechanismus pro přesnou adaptaci}
+- mechanismus pro přesnou adaptaci na širokém rozptylu parametrů\\
+- model má několik míst metylace, dalších detailů, reprodukuje mnoho pozorování na dynamiku systému chemotaxe\\
+- robustnost přesné adaptace závisí na tom, že CheB pracuje pouze na aktivních receptorech a nedemetyluje receptory, které jsou neaktivní\\
+\indent - nezbytné pro robustní adaptaci, není nereálné\\
+\indent - povolením malého množství $\epsilon$ pro CheB provádět akce na neaktivních receptorech způsobí\\
+\indent \indent ztrátu přesné adaptace faktorem $\epsilon$
+
+\subsection{Robustní adaptace a integrální zpětná vazba}
+- speciální zpětná vazba\\
+\indent - míra demetylace je úměrná přímo aktivitě víc než jakékoliv jiné entitě\\
+\indent - negativní zpětná vazba působí přímo na promměnou, která má být kontrolována\\
+\indent - souvisí s inženýrským řídícím principem \textbf{integrální zpětné vazby}\\
+\indent \indent - řízení signálem, který v čase integruje chybu mezi výstupem a žádaným výstupem\\
+\indent \indent - garantování navedení do chtěného stavu i přes změny v parametrech systému\\
+\indent \indent - často se ukazuje jako jedinné možné robustní řešení tohoto problému\\
+\\
+Experimenty ukázaly, že přesná adaptace je robustní, zatímco ustálený stav aktivity a adaptační časy jsou fine-tuned
+
+\section{Individualita a robustnost v bakteriálních chemotaxích}
+- identické buňky mají rozdílný charakter, jak provádějí chemotaxi\\
+\indent - některé nervóznější a přemetují častěji, jiné klidnější\\
+- individuální charakteristiky buněk trvají desítky minut\\
+- čas adaptace na atraktant je také individuální\\
+- ustálená frekvence přemetů a je inverzně korelovaná s adaptačním časem buňky\\
+- obvod bakteriální chemotaxe má design takový, že klíčová vlastnost, jako je přesná adaptace, je robustní s ohledem na rozdílnost v úrovni proteinů \\ 
 
 \end{document}

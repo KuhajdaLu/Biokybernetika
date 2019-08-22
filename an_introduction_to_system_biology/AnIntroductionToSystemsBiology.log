@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  21 AUG 2019 20:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  23 AUG 2019 00:59
 entering extended mode
 **./AnIntroductionToSystemsBiology.tex
 (AnIntroductionToSystemsBiology.tex
@@ -1529,16 +1529,137 @@ Package hyperref Warning: Composite letter `\textasciicaron+t'
 (hyperref)                removing `\textasciicaron' on input line 676.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 677--682
+Underfull \hbox (badness 10000) in paragraph at lines 677--685
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 685.
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--697
+
+ []
+
 [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 685.
+Underfull \hbox (badness 10000) in paragraph at lines 699--706
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--710
+
+ []
+
+[19]
+Kapitola 6.
+
+Package hyperref Warning: Composite letter `\textring+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textring' on input line 712.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+r'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 712.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 713--714
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--724
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 727--745
+
+ []
+
+[20
+
+]
+
+Package hyperref Warning: Composite letter `\textasciicaron+r'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 746.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--753
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--769
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 771--776
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 778--787
+
+ []
+
+[21]
+
+Package hyperref Warning: Composite letter `\textring+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textring' on input line 788.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+e'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 788.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+r'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 788.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 789--793
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 795--803
+
+ []
+
+
+Package hyperref Warning: Composite letter `\textring+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textring' on input line 804.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+r'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 804.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+e'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 812.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 813--822
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 824--830
+
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 831.
+[23]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 831.
  (AnIntroductionToSystemsBiology.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 685.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 685.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 831.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 831.
 
 
 Package rerunfilecheck Warning: File `AnIntroductionToSystemsBiology.out' has c
@@ -1548,15 +1669,15 @@ hanged.
 
 Package rerunfilecheck Info: Checksums for `AnIntroductionToSystemsBiology.out'
 :
-(rerunfilecheck)             Before: E2C853D8B6CF9149A15FC4DB40CB3A5F;4682
-(rerunfilecheck)             After:  6A9E55362456B98037A1FB22CDBF9497;4782.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 685.
+(rerunfilecheck)             Before: 3A527A7987C73A51C6ED61FA7CD82015;6173
+(rerunfilecheck)             After:  414D8F715A5741C170C7A2C60B69DE1D;6284.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 831.
  ) 
 Here is how much of TeX's memory you used:
- 11919 strings out of 493312
- 173833 string characters out of 3138899
+ 11955 strings out of 493312
+ 174532 string characters out of 3138899
  388023 words of memory out of 3000000
- 15204 multiletter control sequences out of 15000+200000
+ 15219 multiletter control sequences out of 15000+200000
  12564 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  37i,7n,39p,311b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1570,9 +1691,9 @@ msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on AnIntroductionToSystemsBiology.pdf (19 pages, 216485 bytes).
+Output written on AnIntroductionToSystemsBiology.pdf (24 pages, 238936 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 88 named destinations out of 1000 (max. 500000)
- 361 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 439 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 481 words of extra memory for PDF output out of 10000 (max. 10000000)
 

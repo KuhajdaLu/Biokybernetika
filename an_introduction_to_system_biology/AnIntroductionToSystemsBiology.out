@@ -32,7 +32,7 @@
 \BOOKMARK [1][-]{section.4.4}{multi-output FFL um\355 generovat casov\351 FIFO porad\355}{chapter.4}% 32
 \BOOKMARK [1][-]{section.4.5}{Integrace sign\341lu a kombinatorick\341 kontrola: bi-fan a huste se prekr\375vaj\355c\355 regulony}{chapter.4}% 33
 \BOOKMARK [1][-]{section.4.6}{S\355tov\351 motivy a glob\341ln\355 struktury smyslov\375ch transkripcn\355ch s\355t\355}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{S\355tov\351 motivy ve v\375vojov\375ch, transdukcn\355ch a neronov\375ch s\355t\355ch}{}% 35
+\BOOKMARK [0][-]{chapter.5}{S\355tov\351 motivy ve v\375vojov\375ch, transdukcn\355ch a neuronov\375ch s\355t\355ch}{}% 35
 \BOOKMARK [1][-]{section.5.1}{S\355tov\351 motivy ve v\375vojov\375ch transkripcn\355ch s\355t\355ch}{chapter.5}% 36
 \BOOKMARK [2][-]{subsection.5.1.1}{Dvounodov\341 pozitivn\355 zpetn\341 smy\235ka pro del\341n\355 rozhodov\341n\355}{section.5.1}% 37
 \BOOKMARK [2][-]{subsection.5.1.2}{Reguluj\355c\355 zpetn\341 vazba a regulovan\341 zpetn\341 vazba}{section.5.1}% 38
@@ -44,3 +44,18 @@
 \BOOKMARK [2][-]{subsection.5.3.2}{V\355cevrstv\351 perceptronu mohou prov\351st detailn\355 v\375pocty}{section.5.3}% 44
 \BOOKMARK [1][-]{section.5.4}{Kompozitn\355 s\355tov\351 motivy: z\341porn\341 zpetn\341 vazba a oscil\341torov\351 motivy}{chapter.5}% 45
 \BOOKMARK [1][-]{section.5.5}{S\355tov\351 motivy v neuronov\351 s\355ti C.elegans}{chapter.5}% 46
+\BOOKMARK [2][-]{subsection.5.5.1}{V\355cevstupov\351 FFL v neuronov\375ch s\355t\355ch}{section.5.5}% 47
+\BOOKMARK [2][-]{subsection.5.5.2}{V\355cevrstv\351 perceptrony v neuronov\351 s\355t\355 C.elegans}{section.5.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Robusnost proteinov\375ch obvodu: pr\355klad bakteri\341ln\355 chemotaxe}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Princip robustnosti}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Bakteri\341ln\355 chemotaxe, jak bakterie mysl\355}{chapter.6}% 51
+\BOOKMARK [2][-]{subsection.6.2.1}{Chov\341n\355 chemotaxe}{section.6.2}% 52
+\BOOKMARK [2][-]{subsection.6.2.2}{Odezva a presn\341 adaptace}{section.6.2}% 53
+\BOOKMARK [1][-]{section.6.3}{Chemotaxinov\375 proteinov\375 obvod E.coli}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.3.1}{Atraktanty sni\236uj\355 aktivitu X}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.2}{Adaptace je d\355ky pomal\351 modifikaci X, kter\341 zvy\235uje jeho aktivitu}{section.6.3}% 56
+\BOOKMARK [1][-]{section.6.4}{Dva modely mu\236ou vysvetlit presnou adaptaci: robustn\355 a fine-tuned}{chapter.6}% 57
+\BOOKMARK [2][-]{subsection.6.4.1}{Fine-tuned model}{section.6.4}% 58
+\BOOKMARK [2][-]{subsection.6.4.2}{Barkai-Leibleruv robustn\355 mechanismus pro presnou adaptaci}{section.6.4}% 59
+\BOOKMARK [2][-]{subsection.6.4.3}{Robustn\355 adaptace a integr\341ln\355 zpetn\341 vazba}{section.6.4}% 60
+\BOOKMARK [1][-]{section.6.5}{Individualita a robustnost v bakteri\341ln\355ch chemotax\355ch}{chapter.6}% 61
