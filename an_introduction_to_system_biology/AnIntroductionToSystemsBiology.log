@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  23 AUG 2019 00:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2017.12.9)  23 AUG 2019 12:34
 entering extended mode
 **./AnIntroductionToSystemsBiology.tex
 (AnIntroductionToSystemsBiology.tex
@@ -1654,12 +1654,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 824--830
 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 831.
 [23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 831.
+Kapitola 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 833--859
+
+ []
+
+
+Package hyperref Warning: Composite letter `\textring+u'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textring' on input line 860.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 861--869
+
+ []
+
+[24
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 871--886
+
+ []
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+e'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 887.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+c'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 887.
+
+
+Package hyperref Warning: Composite letter `\textasciicaron+e'
+(hyperref)                not defined in PD1 encoding,
+(hyperref)                removing `\textasciicaron' on input line 887.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 888--899
+
+ []
+
+[25]
+Kapitola 8.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 910.
+[26
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 910.
  (AnIntroductionToSystemsBiology.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 831.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 831.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 910.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 910.
 
 
 Package rerunfilecheck Warning: File `AnIntroductionToSystemsBiology.out' has c
@@ -1669,18 +1717,18 @@ hanged.
 
 Package rerunfilecheck Info: Checksums for `AnIntroductionToSystemsBiology.out'
 :
-(rerunfilecheck)             Before: 3A527A7987C73A51C6ED61FA7CD82015;6173
-(rerunfilecheck)             After:  414D8F715A5741C170C7A2C60B69DE1D;6284.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 831.
+(rerunfilecheck)             Before: 3A7415816BD27F78EC5BFDB7B5886FA8;6728
+(rerunfilecheck)             After:  7D283A03B1C90DBC51558713E20B71AB;6787.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 910.
  ) 
 Here is how much of TeX's memory you used:
- 11955 strings out of 493312
- 174532 string characters out of 3138899
+ 11968 strings out of 493312
+ 174667 string characters out of 3138899
  388023 words of memory out of 3000000
- 15219 multiletter control sequences out of 15000+200000
+ 15224 multiletter control sequences out of 15000+200000
  12564 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 37i,7n,39p,311b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 37i,7n,39p,324b,427s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKT
@@ -1691,9 +1739,9 @@ msfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
 m/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on AnIntroductionToSystemsBiology.pdf (24 pages, 238936 bytes).
+Output written on AnIntroductionToSystemsBiology.pdf (27 pages, 249055 bytes).
 PDF statistics:
- 439 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 481 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 473 PDF objects out of 1000 (max. 8388607)
+ 117 named destinations out of 1000 (max. 500000)
+ 521 words of extra memory for PDF output out of 10000 (max. 10000000)
 

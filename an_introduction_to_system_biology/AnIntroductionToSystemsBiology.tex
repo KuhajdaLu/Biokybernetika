@@ -828,4 +828,83 @@ Experimenty ukázaly, že přesná adaptace je robustní, zatímco ustálený st
 - ustálená frekvence přemetů a je inverzně korelovaná s adaptačním časem buňky\\
 - obvod bakteriální chemotaxe má design takový, že klíčová vlastnost, jako je přesná adaptace, je robustní s ohledem na rozdílnost v úrovni proteinů \\ 
 
+
+\chapter{Robustní vzorování ve vývoji}
+- vývoj - proces kdy se z vajíčka stává mnohobuněčný organismus - mnoho rozdělení na vznik embrya\\
+- všechny buňky stejný genom\\
+\indent - kdyby všechny vyjadřovaly stejný protein, tělo by bylo beztvré a tvořené identickými buňkami\\
+\indent - třeba tedy udělit osud, rozdíl v proteinech, které vyjadřují\\
+- \textbf{morfogeny} - signálové molekuly (často proteiny)\\
+\indent - k vytvoření prostorového vzoru je třeba poziční informace, kterou nesou jejich gradienty\\
+\indent - jejich produkce v daném zdrojovém místě, rozptyluje se do regionu který bude paternován\\
+\indent \indent - \textbf{pole}\\
+\indent - koncentrace vysoká v blízkosti zdroje, snižuje se vzdáleností\\
+\indent - buňky v poli jsou ze začátku identické a můžoucítit morfogen pomocí receptorů\\
+\indent \indent - navázání morfogenu na receptor, aktivace signálových cest, exprese sady genů\\
+\indent \indent \indent - jaké geny vyjadřovány a osud buňky závisí na koncentraci morfogenu\\
+- Model Francouzské vlajky - koncentrace morfogenu M(x), zdroj x=0\\
+\indent - buňky cítí koncentraci vyšší hraniční hodnota $T_1$ - osud A\\
+\indent - nižší než $T_1$ a vyšší než hranici $T_2$ - osud B\\
+\indent - nižší než $T_2$ - osud C\\
+\indent - 3-regionální vzor - normálně více než 3 osudy\\
+- komplexní prostorové vzory se neformují najednou, sekvenční proces\\
+- když hrubý vzor vytvořen, buňky vy regionech můžou skrývat další morfogeny pro generování jemnějších subvzorů\\
+- některé vzory optřebují průsečík 2+ morfogenů - vznik složitých prostorových rozloženítkání\\
+- vývojová transkripční síť - sekvenční regulace genů během vzorovacího procesu\\
+- vzorování gradientů morfogenů díky rozptýlení molekul cítěných biochemickými obvody\\
+\indent - citlivost vzorů na různost parametrů?\\
+\indent - velmi robustní na s ohledem na širokou škálu genetických a prostorových poruch\\
+\indent - nejčastěji se měnící parametr je produkční míra proteinů\\
+\indent - změnou míry produkce morfogenu často vede k malé změně velikostí a pozic formovaného regionu\\
+
+\section{Exponenciální profily morfogenů nejsou robustní}
+- nejjednodušší meganismus - morfogen produkován ve zdroji x=0 a rozptyluje se do okolí s identickými buňkami\\
+- degradace $\alpha$ - kombinací s rozptylem to vede k profilu morfogenu s klesající exponenciálou\\
+- vzdálenost rozpadu $\lambda$ - vzdálenost, kterou po uražení morfogenu v poli začne degradovat\\
+- čím větší konstanta rozptylu D, tím mneí je degradační míra $\alpha$\\
+- rozpad je dramatický - vzdálenost $10\lambda$ - koncentrace 5$\%$ a $5.10^{-5}$ původní hodnoty\\
+- $\lambda$ - typická velikost regionu, která může být vzorována daným gradientem\\
+- problém, když je produkční míra zdroje morfogenu porouchaná ($M_0$)- dosažení jiné hranice, jiného osudu\\
+- tento proces nevysvětluje robustnost pozorovanou ve vývojovém vzorování\\
+
+\section{Zvýšená robustnost se samozlepšnou degradací morfogenu}
+- použití nelineární míry degradace\\
+- posun $\delta$ (rozdíl mezi originální a posunutou hranicí) v morfogenním profilu po změně $M_0$ je v prostoru jednotný\\
+\indent - všechny regiony jsou posunuty o stejnou vzdálenost jako $M_0$\\
+- cílem zvýšit robustnost - co nejmenší posun $\delta$ při změně v $M_0$ na $M_0'$\\
+\indent - míra rozpadu blízko x=0 co největší, dosažení $M_0'$ s malým posunem\\
+\indent \indent - lze klesajícím vzdáleností $\lambda$ - neakceptovatelné\\
+\indent \indent \indent - rozsah morfogenu, tedy velikost vzoru, je silně redukována\\
+\indent \indent \indent - potřeba najít profil s velkým dosahem a robustností\\
+\indent \indent \indent \indent - rychlý rozpad kolem x=0 k dosažení robustnosti při změně v $M_0$\\
+\indent \indent \indent \indent - pomalý rozpad na velkém x k dosažení velkého rozsahu M\\
+- nelineární samozlepšená degradace\\
+\indent - vzpětnovazební mechanismus dělající degradační míru M rostoucí s koncentrací M\\
+\indent - samozlepšená degradace povoluje ustálený stav profilu morfogenu s mírou nestejnoměrného rozpadu\\
+\indent - profil se rozpadá rychle kolem zdroje - robustnost ve změnách produkce morfogenu\\
+\indent - pomalý rozpad dále od zdroje - vzorování ve velkém rozsahu\\
+
+\section{Motivy sítě, které provádí degradační zpětnou vazbu pro robustní vzorování}
+- navázání morfogenu na receptor, změna exprese genu\\
+\indent - 2 typy smyček v rozdílných vývojových procesech\\
+- zpětnovazební smyčka, kde receptor R zlepšuje degradaci M\\
+\indent - morfogen vážící se k R spouští signalizaci, zvýšení exprese R\\
+\indent - degradace M způsobena zvedáním vazby morfogenu do receptoru a jeho poruchou v rámci buňky\\
+\indent - M zlepšuje produkci R, R zlepšuje míru endocytózy a degradace M\\
+- symčka, když R potlačuje degradaci M\\
+\indent - navázáním M na R se spouští signalizace, represe exprese R\\
+\indent - R potlačuje navázáním se degradaci M a potlačuje protein degradující M (mimobuněčná\\
+\indent \indent protáza) nebo represuje expresi protázy\\
+- v obou případech M zvyšuje vlastní míru degradace, která podporuje robustní vrozování ve velkém rozsahu\\
+
+
+\chapter{Kinetické korektury}
+
+
+
+
+
+
+
+
 \end{document}
