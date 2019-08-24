@@ -899,10 +899,124 @@ Experimenty ukázaly, že přesná adaptace je robustní, zatímco ustálený st
 
 
 \chapter{Kinetické korektury}
+- kinetická korektura - principy s vysokou přesností, které jsou využívány v rozmanitých molekulárních rozpoznávacích systémech\\
+- čtení genetického kódu během translace - řerězec je syntetizován přidáváním monomeru v každém kroce\\
+\indent - typ monomeru je zvolen informací kódovanou v šabloně - při translaci je to v mRNA\\
+\indent - kvůli teplotnímu šumu je občas přidán nesprávný monomer\\
+\indent \indent - kinetická odezva je hlavní nástroj na redukci míry chybovosti\\ 
+\indent \indent \indent - výrazně přesnější než obyčejné rozvnovážné porovnávání mezi monomery\\
+- zavedení do poznávacího problému v imunitním systému\\
+\indent - jak imunitní systém rozpozná proteiny jdoucí ze škodlivých mikrobů přes přítomnost velmi\\
+\indent \indent podobných proteinů jdoucích z ze zdravých buněk těla\\
+\indent - použití malý rozdíl ve slučivosti proteinového ligandu pro vytvoření velmi přesného rozhodnutí\\
+- strategie Picassovy místnosti - půlka ho má ráda (v místnosti 10min), půlka ne(v místnosti 1min)\\
+\indent - otevření mísnosti, vpuštění lidí, zavření, otevření východu z místnosti\\
+\indent - po minutě odchází co nemají rádi a zůstávají pouze ti co jo - výrazně více než 10x víc\\
+\indent \indent - v případě stálého průchodu by to bylo 10x více\\
+\indent - použití podobné strategie, jwjí reakce jsou nereverzivní, nevyvážená\\
 
+\section{Kinetická korektura genetického kódu může redukovat míru chybovosti molekulárního rozpoznávání}
+- při translaci ribozomy produkují proteiny spojováním se s aminokyselinami jedna po druhé do řetězce\\
+\indent - pořadí informací kódovanou mRNA\\
+\indent - aminokyseliny kódované kodonem - série 3 písmen na mRNA\\
+\indent - mapování mezi 64 kodony a 20 aminokyselinami je genetický kód\\
+- při tvorbě proteinu musí kodony být čteny a odpovídající aminokyseliny přivedeny do ribozomu\\
+\indent - aminokyselina je přivedena připojena k dané tRNA molekule\\
+\indent - tRNA má 3 písmenné rozpoznávací komplementární místo\\
+\indent \indent - páruje se se sekvencí kodonů pro aminkoyselinu na mRNA\\
+\indent \indent - pro každý kodon je tRNA, která specifikuje aminokyselinu v genetickém kódu\\
+- kodon musí rozpoznat a připojit se na správnou tRNA - termální šum - chybovovst\\
+\indent - ze 100 aminokyselin bývá 1\% šance, že je 1 špatně - více by bylo fatální\\
+\indent \indent - nepřijatelná frakce buňky\\
 
+\subsection{Rozvnováha vázání nevysvětluje přesnost translace}
+- nejjednodušší model pro tento porovnávací proces - produkce míry chybovosti 100x větší než ta pozorovaná\\
+- kodon C na mRNA v ribisomu, který kóduje aminokyselinu a je přidáván na konec proteinového řetězce\\
+\indent - míra správného navázání na C - $c$, C se váže na $c$ s on-mírou $k_c$\\
+\indent - tRNA se odváže od kodonu s off-mírou $k_c'$\\
+\indent - tRNA navázané - pravděpodobnost, aminokyselina navázaná na tRNA bude kovalentně\\
+\indent \indent spojena s rostoucím translatovaným proteinovým řetězcem\\
+\indent - osvobozené tRNA se odváže od kodonu a ribozom se přesune k dalšímu kodonu v mRNA\\
+\indent - počet správných tRNA je přibližně stejný jako počet nesprávných tRNA\\
+\indent - \textbf{míra chybovosti} - poměr správného a špatného začlenění aminokyseliny\\
+\indent - špatné tRNA se odváže od mnohem rychleji než správná tRNA - slaší vazba - Picassova místnost\\
+- rovnováha vázání provede rozlišování jen tak dobré, jako je poměr mezi správnými a chybnými cíly\\
 
+\subsection{Kinetická korekce může dramaticky snížit míru chybovosti}
+- tRNA, po navázání kodonu, projde chemickou modifikací - $c$ naváže C a změní se v $c^*$\\
+\indent - modifikovaná tRNA - $c^*$ - může odpadnou od kodonu nebo darovat aminokyselinu prodlužujícímu\\
+\indent \indent se řetězci\\
+\indent - prakticky nereverzivní - zdá se zbytečné, může dojít ke ztrátě správné tRNA\\
+\indent - design generující vysokou přesnost\\
+\indent - $c^*$ nabídne 2. rozlišovací krok\\
+\indent \indent - jednou modifikovaná špatná tRNA může odpadnout od kotonu, ale ne už se zpátky\\
+\indent \indent \indent navázat\\
+\indent \indent \indent - nereverzivní reakce funguje jako Picassova místnost s 1 dveřmi\\
+\indent - povolení 2 nezávislých rovnovážných procesech rozpoznávání\\
+\indent \indent - druhý pracuje na výstupu prvního - míra chybovosti rovna 2. odmocnině\\
+- míra chybovosti 1/10000 - podobné pozorované chybovosti\\
+- dosáhnutí větší míry přesnosti spojením dohromady více nereverzivních korekčních procesů\\
 
+\section{Rozeznávání vlastního a nevlastního imunitním systémem}
+- trochu jiné vysvětlení kinetické korekce - časová zpoždění - kinetická korekce v imunitním systému\\
+- imunitní systém monitoruje tělo - nebezpečné patogeny\\
+\indent - při zpozorování vypočítá a zmobilizuje odpovídající odpověď\\
+\indent - imunitní sytém je obrovská kolekce buněk komunikujících mezi sebou nesčetně způsoby\\
+\indent - protilátky - protein s designem, aby se vázal na cizí proteiny vytvářené patogeny - antigen\\
+\indent - T-cells - buňky skenující tělo, hledání antigenů\\
+\indent \indent - receptory z daných protilátek proti cizímu proteinovému antigenu\\
+\indent \indent - k poskytnutí informace T-buňce, každá buňka těla má zlomky proteinů na povrchu\\
+\indent \indent \indent - proteiny ve vyhrazených proteinových komplexech na povrchu buňky - MHCs\\
+\indent \indent - cílem eliminovat infikovanou buňku\\
+\indent \indent - rozpoznání antigenu receptorem, cizí fragment proteinu v MHC na proteinu spustí signál\\
+\indent \indent \indent transdukční kaskádou v buňce, T-buňka zabije buňku prezentovanou cizím peptidem\\
+\indent \indent - T-buňky ničí buňky těla - autoimunitní choroba\\
+\indent \indent - míra chybovosti je méně než $10^-6$, ačkoliv spříznění antigenů je často jen 10x větší než\\
+\indent \indent \indent spříznění vlastních buněk\\
+
+\subsection{Rovnováha navazování není vysvětlení nízké míry chybovosti imunitního rozpoznávání}
+- receptory na T-buče tak, aby rozpoznaly specifický cizí protein - přesný ligand $c$\\
+- $c$ se váže na receptor s velkým spřízněním\\
+\indent - receptory dále vystaveny mnoha vlastním proteinům - menší spříznění\\
+- míra chybovosti vedoucí k poměru spříznění přesných a nepřesných cílů vynásobená poměrem jejich koncentrací\\
+- spříznění přesných a nepřesných cílů je velmi podobné, míra nerozpoznání je příliš vysoká\\
+- přesný ligand stráví více času navazováním spojení s receptorem\\
+- nepřesné ligandy mají cca 10x menší spříznivost než přesné, nepřesných (zdravé) je ale často více než přesných\\
+- míra nepřesnosti je zde větší než 0.1 $\rightarrow$ výrazně více než pozorovaná $10^{-6}$ a méně\\
+
+\subsection{kinetická korekce zvyšující přesnost T-buněčného rozpoznávání}
+- zesílení malého rozdílu na velký rozdíl pro míru rozpoznávání\\
+- po navázání ligandu dochází k sérii kovalentních modifikací receptoru - fosforylace na početných místech\\
+\indent - konzumují energii a jsou zadrženy od termální rovnováhy\\
+- při modifikaci naváže receptor v buňce pár proteinových partnerů\\
+- aktivace signálové cesty až po všech modifikacích\\
+- kinetická korekce závisí na zpoždění, které je těmito kroky vytvořeno\\
+\indent - pouze ligandy, které se udrží déle, mají šanci aktivovat T-buňku\\
+\indent - čím větší je zpoždění, tím je větší počet událostí navazování přesného ligandu, který se odpojí\\
+\indent \indent před začátkem signalizace\\
+\indent \indent - zvýšení zpoždění může mít za následek ztrátu citlivosti\\
+\indent \indent \indent - tolerováno díky značně zlepšenému rozlišování mezi přesnými a nepřesnými ligandy\\
+\indent - modifikace musí zmizet dříve, než se odpojí ligand, aby se mohl hned připojit jiný\\
+\indent - čím je ligand připojen déle, tím je větší šance, že bude spouštět signalizaci\\
+- proces v T-buňkách není unikátní, děje se skoro všude v receptorech v savčích buňkách\\
+- poskytuje robustnost proti chybnému ropoznání pozadí různých molekulo v oraganismu\\
+
+\section{Kinetická korekce se může objevit v různých rozpoznávacích procesech v buňce}
+- hlavním znakem kinetické korekce je existence nerovnovážná reakce při rozpoznávacím procesu, která formuje mezistav, který vytváří zpoždění po navázání ligandu\\
+- systém musí pracovat mimo rozvnováhu, aby ligandy nemohly obejít zpoždění znovunavázáním přímo na již modifikovaný stav\\
+- další výskyty - vazba DNA opravným proteinem, rekombinace proteinů\\
+- rozpoznávací protein A se naváže na poničená vlákna DNA - vyšší spřízněnost k poničené DNA než normální DNA\\
+\indent - potom modifikace (fosforylace), naváže další proteiny B a C, které nahradí poničená vlákna\\
+\indent \indent DNA\\
+\indent - modifikační krok proteinu A může zabránit chybému orzpoznání DNA jako zničené\\
+- navazování aminokyseliny na dané místo tRNA\\
+\indent - speciální enzym rozpozná tRNA a její specifickou aminokyselinu a kovalentně se připojí\\
+\indent - připojení špatné aminokyseliny na tRNA by mohlo vést k začlenění chybné aminokyseliny v\\
+\indent \indent translatovaném proteinu\\ 
+\indent - chybovost kolem $10^{-4}$\\
+\indent \indent - docíleno vysokoenergetickým mezistavem, ve kterém enzym, který spojuje aminokyselinu\\
+\indent \indent \indent k tRNA, nejdříve naváže oba reaktanty, modifikuje tRNA, a až pak formuje\\
+\indent \indent \indent kovalentní vazbu mezi nimi\\
 
 
 
