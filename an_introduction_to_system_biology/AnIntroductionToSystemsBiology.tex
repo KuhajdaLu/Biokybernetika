@@ -971,7 +971,7 @@ Experimenty ukázaly, že přesná adaptace je robustní, zatímco ustálený st
 \indent \indent - rozpoznání antigenu receptorem, cizí fragment proteinu v MHC na proteinu spustí signál\\
 \indent \indent \indent transdukční kaskádou v buňce, T-buňka zabije buňku prezentovanou cizím peptidem\\
 \indent \indent - T-buňky ničí buňky těla - autoimunitní choroba\\
-\indent \indent - míra chybovosti je méně než $10^-6$, ačkoliv spříznění antigenů je často jen 10x větší než\\
+\indent \indent - míra chybovosti je méně než $10^{-6}$, ačkoliv spříznění antigenů je často jen 10x větší než\\
 \indent \indent \indent spříznění vlastních buněk\\
 
 \subsection{Rovnováha navazování není vysvětlení nízké míry chybovosti imunitního rozpoznávání}
@@ -1018,6 +1018,157 @@ Experimenty ukázaly, že přesná adaptace je robustní, zatímco ustálený st
 \indent \indent \indent k tRNA, nejdříve naváže oba reaktanty, modifikuje tRNA, a až pak formuje\\
 \indent \indent \indent kovalentní vazbu mezi nimi\\
 
+
+\chapter{Optimální design genového obvodu}
+- zde jednoduchá aplikace teorie přirozeného výběru v genovém obvodu\\
+- optimalita buněčného obvodu?\\
+\indent - mnoho mutací zhorší výkon\\
+\indent - funkce zdatnosti - maximalizace - potíž, že ji v reálném světě neznáme\\
+\indent \indent - není tedy třeba optimalizovat, ale jen dojít "uspokojivého" výsledku\\
+- optimalita - idealizovaný předpoklad, dobrý startovací bod pro generování testovacích hypotéz genového obvodu\\
+\indent - zde rozebrání nejjednodušších systémů, dá se vytvořit fenomenologický popis základních sil, \\
+\indent \indent které působí při hře přirozeného výběru\\
+- jednoduchá situace, bakterie roste konstantním prostředí, které je konstantně doplňováno\\
+\indent - lze definovat funkci zdatnosti - základ na míře růstu organismu\\
+\indent - bekterie s nejrychlejší mírou růstu může převzít populaci\\
+\indent \indent - zajištěno, že růstová výhoda je dostatečně velká na to, aby překonala náhodný efekt\\
+\indent \indent \indent genetického driftu\\
+\indent \indent - evol. výběr podmíněný růstem v konstantním prostředí vede k maximalizaci míry růstu\\
+- detailní příklad - funkce zdatnosti laktózy (lac) v E.coli\\
+
+\section{Optimální úroveň exprese proteinu při konstatních podmínkách}
+- \textbf{funkce zdatnosti} - f - velikost k optimalizaci\\
+\indent - v příznivém prostředí $f$ míra růstu buňky\\
+- pár bakterií, růst počtu N exponenciálně, dokud nejsou příliš hustě
+\begin{equation}
+N(t)=N(0)e^{ft}
+\end{equation}
+- souboj 2 druhů s různým $f$ - ten s vyšší vyhraje a získá celý prostor\\
+- co určuje míru exprese proteinu? - $lac$ system E.coli\\
+\indent - kódování proteinů LacZ - zozklad cukr laktózy - zdroj energie a uhlíku\\
+\indent \indent - cca 60000 kopií LacZ na buňku\\
+\indent - úroveň exprese je vybrána maximalizací funkce zdatnosti\\
+\indent - nejjednodušší prostředí s konst. podmínkami - prostředí s konstatní koncentrací cukr laktózy\\
+- \textbf{náklady} produkce proteinu LacZ, \textbf{prospěch}, který to přivádí buňce\\
+
+\subsection{Prospěch z proteinu LacZ}
+- prospěch - relativní nárůst míry růstu díky akci proteinu\\
+- prospěch úměrný míře, kdy LacZ rozkládá substrát - laktózu\\
+- míra enzymu LacZ je dobře popsána - LacZ rozkládá laktózu v míře úměrné počtu kopií proteinu (Z), vynásobené saturační funkcí koncentrace laktózy (L)\\
+\begin{equation}
+b(Z,L)=\frac{\delta ZL}{K+L}
+\end{equation}
+\indent K ... Michaelisova konstanta\\
+\indent $\delta$ ... maximální výhoda míry růstu na protein LacZ při saturující laktóze\\
+- prospěch roste lineárně s úrovní proteinu Z\\
+- experimentálně vyvolávačem IPTG - chemický analog laktózy - exprese proteinu Lac - není metabolizován buňkami\\
+\indent - nerokuje žádný prospěch pro sebe\\
+
+\subsection{Náklady proteinu LacZ}
+- experimentálně změřeno vyvoláním exprese proteinu LacZ na různé úrovně pomocí vyvolávače IPTG při absenci laktózy\\
+\indent - IPTG vynakládá pouze náklady produkce proteinu, nedává žádný prospěch, protože nemůže\\
+\indent \indent být využit buňkami\\
+- exprese LacZ snižuje míru růstu buňky\\
+\indent - náklady rovné míře růstu jsou nelineární funkce Z\\
+\indent \indent - čím více produkováno, tím je vyšší náklad na každou další buňku\\
+\indent \indent - produkce proteinu závisí na zrdojích buňky, které se tvorbou redukují i pro další užitečné\\
+\indent \indent \indent proteiny\\
+\indent - míra růstu buňky závisí na vnitřních zrojích R\\
+\begin{equation}
+f\sim\frac{R}{K_R+R}
+\end{equation}
+- produkce Z je pro buňku břemeno - produkce mRNA, sytetizace aminkyselin a spojení k formě Z\\
+\indent - redukce interních zdrojů R\\
+\indent - redukce míry růstu začne divergovat, když je vyprodukováno příliš Z a R se začne vyčerpávat\\
+\begin{equation}
+c(Z)=\frac{\eta Z}{1-Z/M}
+\end{equation}
+- vytvořeno pár kopií proteinu - náklady skoro lineární\\
+- náklady rostou prudce když jeZ srovnatelné s horním limitem exprese (M), když začne značně zasahovat do ostatních nezybtných proteinů\\
+\indent - reálně se proteiny nedostávají příliš blízko hranici Z=M, kde by nákladová funkce divergovala\\
+- relativní redukce míry růstu komplentně vyvolaným systémem $lac$ je kolem 4,5\%\\
+
+\subsection{Funkce zdatnosti a optimální míra exprese}
+- funkce zdatnosti - rozdíl v nákladech a prospěchu\\
+\begin{equation}
+f_L(Z)=b(Z,L)-c(Z)
+\end{equation}
+- maximalizace:
+\begin{equation}
+Z_{opt}=M(1-\sqrt{\frac{\eta(K+L)}{\delta L}})
+\end{equation}
+\indent - čím více laktózy v prostředí, tím vyšší odhadovaná optimální úroveň proteinu\\
+\indent \indent - žádná laktóza - $Z_{opt}$ = 0 - protein by si rokoval jen náklady a nebyl by žádný prospěch\\
+\indent \indent - normálně kolem $Z_{opt}$ = 60000/buňka\\
+\indent \indent - když náklady převyšují prospěch, neni důvod protein vyrábět - málo laktózy v prostředí\\
+\indent \indent \indent - více generací v takovém prostředí - ztráta genu kódujícího LacZ\\
+
+\subsection{Experiment laboratorní evoluce ukazuje, že buňky dosáhnou optimální úrovně LacZ za pár set generací}
+- růst buněk E.coli ve zkumavkách s danou úrovní laktózy\\
+\indent - úroveň dostatečná, aby garantovala plnou indukci erxprese LacZ\\
+- každý den byla 1/100 buněk z každé zkumavky přendána do nové s čerstvým prostředím - \textbf{sériové ředění}
+- růst buněk do stacionární fáze, 1/100 jinam a pořád dokola\\
+- předpokládané úrovně LacZ dosaženy po několika stech generacích\\
+
+\section{Regulovat nebo ne: optimální regulace v proměnných prostředích}
+- některé geny se regulují, některé ne - kdy se to vyplatí?
+- nekonstatní prostředí - produkt genu Z dává prospěch buňce, když je splněna podmínka prostředí $C_Z$\\
+- regulace - Z produkováno při podmínce $C_Z$ a když je potřeba\\ 
+\indent - náklady - produkce a udržování regulačního systému\\
+\indent - \textbf{poptávka} po Z - pravděpodobnost $p$, že organismus ukáže podmínku $C_Z$
+\indent \indent - když $C_Z$ nadbytečné - pravděpodobnost 1-p\\
+- funkce zdatnosti - prospěch, nároky\\
+\indent - s produkcí Z klesá míra růstu kvůli břemenu syntézy a údržby - nároky $c$\\
+\indent - prospěch buňky z akce Z - výhoda míry růstu - $b$\\
+- 1. organismus - protein Z neregulován, produkován konstantně za všech podmínek\\
+\indent - konstitutivní exprese\\
+\indent - neustálá produkce Z - prospěch pouze ve zlomku doby, když je Z požadováno\\
+\begin{equation}
+f_1=pb-c
+\end{equation}
+- 2. organismus - regulační systém, Z produkováno při podmínce $C_Z$ - požadovaná podmínka\\
+\indent - šetří produkcí, která je jen, když je třeba - platí nároky $c$ je zlomek času\\
+\indent - nese nároky $r$ na trovbu a údržbu regulačního systému R\\
+\begin{equation}
+f_2=pb-pc-r
+\end{equation}
+- 3. organismus - nemá regulátor ani gen na produkci Z\\
+\begin{equation}
+f_3=0
+\end{equation}
+- výběr regulace, když má organismus 2 největší zdatnost, neregulovaný design, když ma největší zdatnost 1. organismus\\
+
+\section{Výběr prostředí motivu sítě dopředné smyčky}
+- koherentní FFL - zpoždění na vstupu při ON, ne při OFF\\ 
+- rozšířený v transkripčních sítích, ne každý gen je zahrnut v FFL\\
+- transkripční síť E.coli - 40\% známých genů regulováno 2 vstupy je regulováno pomocí FFL\\
+\indent - 60\% regulováno jednoduchým 2-vstupovým designem\\
+- zjednodušená analýza prospěchu-nákladů pro výběr genového obvodu v daném kolísajícícm prostředí\\
+\indent - prostředí - časově závoslý profil vstupního signálu v přirozeném místě výskytu organismu\\
+- předpoklad - přítomnost systému se vstupním signálem $S_x$ po dobu D\\
+- funkce zdatnosti založena na proprospěchu a nákladech proteinu Z\\
+\begin{equation}
+\phi(D)=\int_0^Df(t)dt
+\end{equation}
+- krátké pulsy mají určitý efekt na růst - vedou k redukci zdatnosti\\
+\indent - redukce zdatnosti - vstupní impuls kratší než kritická doba pulsu ($D_C$), protein Z nemá čas\\
+\indent \indent nahromadit se tak aby prospěch předčil náklady produkce\\
+- když je zdatnost zredukována expresí proteinu Z v reakci na krátý puls, začne být obvod výhodný\\
+\indent - C1-FFL přesně tohle umí - exprese Z až po uplynutí zpoždění\\
+- filtrace signálů kratších než $T_{ON}$ - zabraňuje redukci růstu pro krátké pulsy\\
+- nevýhody - produkce Z po zpoždění - vynechává potenciální prospěch pulsu - někdy více škody než užitku\\
+- analýza rozložení signálů v daném prostředí\\
+\indent - pravděpodobnostní rozložení trvání vstupního pulsu - P(D)\\
+\indent - oddělení pulsů - kyždý při příchodu začání na počáteční hodnotě Z=0 - i Y=0 v případě FFL\\
+\indent - průměrná zdatnost - integrace zdatnosti na puls přes rozložení pulsu\\
+\begin{equation}
+\Phi=\int P(D)\phi(D)dD
+\end{equation}
+\indent - design s vyšší průměrnou zdatností má výhodu výběru\\
+- FFL není vybráno v prostředích s exponenciálním rozdělením pulsů\\
+- naopak výběr v prostředích s bimodálním rozložením pulsů\\
+- zpoždění u FFL ideálně takové, aby bylo přesně rovno krátkým pulsům\\
+- odfiltrování pulsů bez prospěchu a zároveň minimální negativní dopad na zdatnost při dlouhých pulsech\\
 
 
 

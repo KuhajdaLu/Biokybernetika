@@ -71,3 +71,11 @@
 \BOOKMARK [2][-]{subsection.8.2.1}{Rovnov\341ha navazov\341n\355 nen\355 vysvetlen\355 n\355zk\351 m\355ry chybovosti imunitn\355ho rozpozn\341v\341n\355}{section.8.2}% 71
 \BOOKMARK [2][-]{subsection.8.2.2}{kinetick\341 korekce zvy\235uj\355c\355 presnost T-bunecn\351ho rozpozn\341v\341n\355}{section.8.2}% 72
 \BOOKMARK [1][-]{section.8.3}{Kinetick\341 korekce se mu\236e objevit v ruzn\375ch rozpozn\341vac\355ch procesech v bunce}{chapter.8}% 73
+\BOOKMARK [0][-]{chapter.9}{Optim\341ln\355 design genov\351ho obvodu}{}% 74
+\BOOKMARK [1][-]{section.9.1}{Optim\341ln\355 \372roven exprese proteinu pri konstatn\355ch podm\355nk\341ch}{chapter.9}% 75
+\BOOKMARK [2][-]{subsection.9.1.1}{Prospech z proteinu LacZ}{section.9.1}% 76
+\BOOKMARK [2][-]{subsection.9.1.2}{N\341klady proteinu LacZ}{section.9.1}% 77
+\BOOKMARK [2][-]{subsection.9.1.3}{Funkce zdatnosti a optim\341ln\355 m\355ra exprese}{section.9.1}% 78
+\BOOKMARK [2][-]{subsection.9.1.4}{Experiment laboratorn\355 evoluce ukazuje, \236e bunky dos\341hnou optim\341ln\355 \372rovne LacZ za p\341r set generac\355}{section.9.1}% 79
+\BOOKMARK [1][-]{section.9.2}{Regulovat nebo ne: optim\341ln\355 regulace v promenn\375ch prostred\355ch}{chapter.9}% 80
+\BOOKMARK [1][-]{section.9.3}{V\375ber prostred\355 motivu s\355te dopredn\351 smycky}{chapter.9}% 81
